@@ -1,65 +1,171 @@
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import Script from 'next/script';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
+  description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+  alternates: {
+    canonical: 'https://polebarndirectory.com/',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Pole Barn Directory',
+    title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
+    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+    url: 'https://polebarndirectory.com/',
+    images: [{
+      url: 'https://polebarndirectory.com/og-image.jpg',
+      width: 1200,
+      height: 630,
+    }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
+    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+    images: ['https://polebarndirectory.com/og-image.jpg'],
+  },
+};
+
+export default function HomePage() {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://polebarndirectory.com/#organization",
+        "name": "Pole Barn Directory",
+        "url": "https://polebarndirectory.com",
+        "description": "Curated resources for pole barn and barndominium projects — builder comparisons, cost guides, floor plans, and financing options.",
+        "foundingDate": "2014",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://polebarndirectory.com/#website",
+        "name": "Pole Barn Directory",
+        "url": "https://polebarndirectory.com",
+        "publisher": { "@id": "https://polebarndirectory.com/#organization" }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Pole Barn Resources",
+        "description": "Curated resources for your pole barn project",
+        "numberOfItems": 5,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Find a Builder", "url": "https://polebarnfinder.com" },
+          { "@type": "ListItem", "position": 2, "name": "Cost Guide", "url": "https://polebarndirectory.com/cost-guide" },
+          { "@type": "ListItem", "position": 3, "name": "Floor Plans", "url": "https://polebarndirectory.com/floor-plans" },
+          { "@type": "ListItem", "position": 4, "name": "Financing Guide", "url": "https://polebarndirectory.com/financing" },
+          { "@type": "ListItem", "position": 5, "name": "Builder Checklist", "url": "https://polebarndirectory.com/checklist" }
+        ]
+      }
+    ]
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Script
+        id="schema-markup"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <section className="hero">
+        <div className="hero-bg"></div>
+        <div className="hero-overlay"></div>
+        <div className="container hero-inner">
+          <h1 className="hero-title">Your Pole Barn Starts Here</h1>
+          <p className="hero-subtitle">
+            The curated launchpad for your build journey. Find verified builders, compare regional costs, and browse professional floor plans.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="card-grid">
+            <Link href="https://polebarnfinder.com" target="_blank" rel="noopener" className="path-card animate-fade-up" style={{animationDelay: '0.1s'}}>
+              <div className="card-icon">
+                <svg role="img" aria-label="Find a Builder icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+              </div>
+              <div className="card-title" style={{fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem"}}>Find a Builder</div>
+              <p className="card-text">Compare 2,100+ verified pole barn builders in your state with free quotes.</p>
+              <span className="btn-secondary" style={{width: '100%', marginTop: 'auto'}}>Get Free Quotes →</span>
+            </Link>
+
+            <Link href="/cost-guide" className="path-card animate-fade-up" style={{animationDelay: '0.2s'}}>
+              <div className="card-icon">
+                <svg role="img" aria-label="Cost Guide icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div className="card-title" style={{fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem"}}>What Will It Cost?</div>
+              <p className="card-text">2026 pricing by state, size, and build type. Updated quarterly with real-world data.</p>
+              <span className="btn-secondary" style={{width: '100%', marginTop: 'auto'}}>View Cost Guide →</span>
+            </Link>
+
+            <Link href="/floor-plans" className="path-card animate-fade-up" style={{animationDelay: '0.3s'}}>
+              <div className="card-icon">
+                <svg role="img" aria-label="Browse Floor Plans icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m2 22 20-20"></path><path d="M22 22 2 2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect></svg>
+              </div>
+              <div className="card-title" style={{fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem"}}>Browse Floor Plans</div>
+              <p className="card-text">Barndominium, workshop, and agricultural plans starting at just $699.</p>
+              <span className="btn-secondary" style={{width: '100%', marginTop: 'auto'}}>Browse Plans →</span>
+            </Link>
+
+            <Link href="/financing" className="path-card animate-fade-up" style={{animationDelay: '0.4s'}}>
+              <div className="card-icon">
+                <svg role="img" aria-label="Finance Your Build icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M3 10h18"></path><path d="M5 6l7-3 7 3"></path><path d="M4 10v11"></path><path d="M20 10v11"></path><path d="M8 14v3"></path><path d="M12 14v3"></path><path d="M16 14v3"></path></svg>
+              </div>
+              <div className="card-title" style={{fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem"}}>Finance Your Build</div>
+              <p className="card-text">Construction loans, USDA programs, and barndo mortgages. Pre-qualify in 5 minutes.</p>
+              <span className="btn-secondary" style={{width: '100%', marginTop: 'auto'}}>Compare Rates →</span>
+            </Link>
+
+            <Link href="/checklist" className="path-card animate-fade-up" style={{animationDelay: '0.5s'}}>
+              <div className="card-icon">
+                <svg role="img" aria-label="Builder Checklist icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 11 3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              </div>
+              <div className="card-title" style={{fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem"}}>Builder Checklist</div>
+              <p className="card-text">8 critical questions to ask before you sign any contract. Free printable download.</p>
+              <span className="btn-secondary" style={{width: '100%', marginTop: 'auto'}}>Get Checklist →</span>
+            </Link>
+
+            <Link href="/gallery" className="path-card animate-fade-up" style={{animationDelay: '0.6s'}}>
+              <div className="card-icon">
+                <svg role="img" aria-label="Barndominium Gallery icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              </div>
+              <div className="card-title" style={{fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem"}}>Barndominium Gallery</div>
+              <p className="card-text">Browse our collection of completed builds, interior finishes, and exterior inspiration.</p>
+              <span className="btn-secondary" style={{width: '100%', marginTop: 'auto'}}>View Gallery →</span>
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container text-center">
+          <div className="content-wrapper" style={{maxWidth: '800px'}}>
+            <h2 style={{marginTop: 0}}>Why PoleBarnDirectory.com?</h2>
+            <p className="mb-3" style={{fontSize: '1.2rem', lineHeight: '1.8'}}>
+              We&apos;ve been in the pole barn space since 2014. We don&apos;t build barns — we help you find the right builder, plan, and financing. Every recommendation on this site is researched and independently verified.
+            </p>
+            <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2rem'}}>
+              <div style={{textAlign: 'center', padding: '1rem'}}>
+                <div style={{fontSize: '2rem', fontWeight: '800', color: 'var(--barn-red)'}}>11+</div>
+                <div style={{fontSize: '0.9rem', color: 'var(--text-muted)'}}>Years Online</div>
+              </div>
+              <div style={{textAlign: 'center', padding: '1rem'}}>
+                <div style={{fontSize: '2rem', fontWeight: '800', color: 'var(--barn-red)'}}>2,100+</div>
+                <div style={{fontSize: '0.9rem', color: 'var(--text-muted)'}}>Verified Builders</div>
+              </div>
+              <div style={{textAlign: 'center', padding: '1rem'}}>
+                <div style={{fontSize: '2rem', fontWeight: '800', color: 'var(--barn-red)'}}>3</div>
+                <div style={{fontSize: '0.9rem', color: 'var(--text-muted)'}}>Plan Sources Compared</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
