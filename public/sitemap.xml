@@ -2,32 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://polebarndirectory.com/</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-03-17</lastmod>
   </url>
   <url>
-    <loc>https://polebarndirectory.com/cost-guide</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://polebarndirectory.com/cost-guide/</loc>
+    <lastmod>2026-03-17</lastmod>
   </url>
   <url>
-    <loc>https://polebarndirectory.com/floor-plans</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://polebarndirectory.com/floor-plans/</loc>
+    <lastmod>2026-03-17</lastmod>
   </url>
   <url>
-    <loc>https://polebarndirectory.com/financing</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://polebarndirectory.com/financing/</loc>
+    <lastmod>2026-03-17</lastmod>
   </url>
   <url>
-    <loc>https://polebarndirectory.com/checklist</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://polebarndirectory.com/checklist/</loc>
+    <lastmod>2026-03-17</lastmod>
   </url>
 </urlset>
