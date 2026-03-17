@@ -84,7 +84,7 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container">
-          <div className="card-grid">
+          <div className="card-grid card-grid-3-2">
             <Link href="https://polebarnfinder.com" target="_blank" rel="noopener" className="path-card animate-fade-up" style={{animationDelay: '0.1s'}}>
               <div className="card-icon">
                 <svg role="img" aria-label="Find a Builder icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
@@ -130,14 +130,6 @@ export default function HomePage() {
               <span className="btn-secondary" style={{width: '100%', marginTop: 'auto'}}>Get Checklist →</span>
             </Link>
 
-            <Link href="/gallery" className="path-card animate-fade-up" style={{animationDelay: '0.6s'}}>
-              <div className="card-icon">
-                <svg role="img" aria-label="Barndominium Gallery icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-              </div>
-              <div className="card-title" style={{fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem"}}>Barndominium Gallery</div>
-              <p className="card-text">Browse our collection of completed builds, interior finishes, and exterior inspiration.</p>
-              <span className="btn-secondary" style={{width: '100%', marginTop: 'auto'}}>View Gallery →</span>
-            </Link>
           </div>
         </div>
       </section>

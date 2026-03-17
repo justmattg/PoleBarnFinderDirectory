@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { DM_Sans, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+import Header from './components/Header';
+import ScrollBar from './components/ScrollBar';
+import BackToTop from './components/BackToTop';
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
 const playfair = Playfair_Display({ 
@@ -20,6 +23,13 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
+  openGraph: {
+    type: 'website',
+    siteName: 'Pole Barn Directory',
+    title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
+    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+    url: 'https://polebarndirectory.com',
+  }
 };
 
 export const viewport = {
@@ -36,28 +46,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${playfair.variable} textured-bg`}>
-        <header className="site-header">
-          <div className="container header-inner">
-            <Link href="/" className="logo">
-              <span style={{color: 'var(--barn-red)'}}>Pole Barn</span>
-              <span style={{color: 'var(--text-primary)'}}>Directory</span>
-            </Link>
-            <nav className="nav-links">
-              <Link href="/">Home</Link>
-              <Link href="/cost-guide">Cost Guide</Link>
-              <Link href="/floor-plans">Floor Plans</Link>
-              <Link href="/financing">Financing</Link>
-              <Link href="/checklist">Checklist</Link>
-            </nav>
-            <button className="mobile-menu-btn" aria-label="Toggle menu">
-              ☰
-            </button>
-          </div>
-        </header>
+        <ScrollBar />
+        <Header />
         
         <main>
           {children}
         </main>
+
+        <BackToTop />
 
         <footer className="site-footer">
           <div className="container">

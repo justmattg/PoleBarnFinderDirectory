@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
+import ReadNextCards from '@/app/components/ReadNextCards';
 
 export const metadata: Metadata = {
-  title: 'Barndominium & Pole Barn Floor Plans — Browse 500+ Designs',
+  title: 'Barndominium & Pole Barn Floor Plans | Pole Barn Directory',
   description: 'Compare barndominium, workshop, equestrian, and agricultural floor plans from top providers. Plans starting at $699 with full construction sets available.',
   alternates: {
     canonical: 'https://polebarndirectory.com/floor-plans',
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Pole Barn Directory',
-    title: 'Barndominium & Pole Barn Floor Plans — Browse 500+ Designs',
+    title: 'Barndominium & Pole Barn Floor Plans | Pole Barn Directory',
     description: 'Compare barndominium, workshop, equestrian, and agricultural floor plans from top providers. Plans starting at $699 with full construction sets available.',
     url: 'https://polebarndirectory.com/floor-plans',
     images: [{
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Barndominium & Pole Barn Floor Plans — Browse 500+ Designs',
+    title: 'Barndominium & Pole Barn Floor Plans | Pole Barn Directory',
     description: 'Compare barndominium, workshop, equestrian, and agricultural floor plans from top providers. Plans starting at $699 with full construction sets available.',
     images: ['https://polebarndirectory.com/og-image.jpg'],
   },
@@ -60,7 +62,8 @@ export default function FloorPlansPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-      <header className="page-header">
+      <Breadcrumbs currentPage="Floor Plans" />
+      <header className="page-header hero-pattern">
         <div className="container">
           <h1 className="animate-fade-up">Pole Barn & Barndominium Floor Plans</h1>
           <p className="animate-fade-up delay-1">
@@ -131,7 +134,10 @@ export default function FloorPlansPage() {
               <thead>
                 <tr>
                   <th>Feature</th>
-                  <th>Advanced House Plans <span style={{fontSize: '0.8em', color: 'var(--color-accent)', display: 'block'}}>⭐ Top Pick</span></th>
+                  <th>
+                    Advanced House Plans
+                    <span className="top-pick-badge">TOP PICK</span>
+                  </th>
                   <th>MyBarndominiumPlans.com</th>
                   <th>BarndominiumPlans.com</th>
                 </tr>
@@ -170,6 +176,7 @@ export default function FloorPlansPage() {
               </tbody>
             </table>
           </div>
+          <ReadNextCards />
         </div>
       </div>
     </section>

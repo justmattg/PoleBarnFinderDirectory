@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
+import ReadNextCards from '@/app/components/ReadNextCards';
 
 export const metadata: Metadata = {
-  title: 'How Much Does a Pole Barn Cost in 2026? | Prices by State & Size',
+  title: 'How Much Does a Pole Barn Cost in 2026? | Pole Barn Directory',
   description: 'Pole barn costs range from $15,000 to $180,000. See 2026 pricing by size, build type, and state. Shell-only vs turnkey comparison included.',
   alternates: {
     canonical: 'https://polebarndirectory.com/cost-guide',
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Pole Barn Directory',
-    title: 'How Much Does a Pole Barn Cost in 2026? | Prices by State & Size',
+    title: 'How Much Does a Pole Barn Cost in 2026? | Pole Barn Directory',
     description: 'Pole barn costs range from $15,000 to $180,000. See 2026 pricing by size, build type, and state. Shell-only vs turnkey comparison included.',
     url: 'https://polebarndirectory.com/cost-guide',
     images: [{
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How Much Does a Pole Barn Cost in 2026? | Prices by State & Size',
+    title: 'How Much Does a Pole Barn Cost in 2026? | Pole Barn Directory',
     description: 'Pole barn costs range from $15,000 to $180,000. See 2026 pricing by size, build type, and state. Shell-only vs turnkey comparison included.',
     images: ['https://polebarndirectory.com/og-image.jpg'],
   },
@@ -89,7 +91,8 @@ export default function CostGuidePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-      <header className="page-header">
+      <Breadcrumbs currentPage="Cost Guide 2026" />
+      <header className="page-header hero-pattern">
         <div className="container">
           <h1 className="animate-fade-up">Pole Barn Cost Guide (2026)</h1>
           <p className="animate-fade-up delay-1">
@@ -140,21 +143,32 @@ export default function CostGuidePage() {
           </table>
 
           <h2>8 Core Cost Factors</h2>
-          <p><em>[Insert ChatGPT-generated expanded content for Foundation Type, Steel Gauge, Insulation, Overhead Doors, Electrical/Plumbing, Permits, Labor Rates, Shell-Only vs Turnkey]</em></p>
+          <div className="coming-soon-block">
+            <p className="coming-soon-text">Detailed guide content coming soon.</p>
+          </div>
 
           <h2>State-by-State Cost Modifiers</h2>
-          <p><em>[Insert ChatGPT-generated expanded content for Top 15 states cost index]</em></p>
+          <div className="coming-soon-block">
+            <p className="coming-soon-text">Detailed guide content coming soon.</p>
+          </div>
 
           <h2 id="kit-vs-custom">Kit vs. Custom Build</h2>
           <p>
             While many look to pole barn kits to save money, it&apos;s important to weigh the labor savings against potential challenges. 
             Kit plans start at as little as $699. <Link href="/floor-plans">Browse our floor plan directory</Link> to explore options, making them incredibly attractive. 
-            <em>[Insert ChatGPT-generated expanded content mapping pros/cons]</em>
           </p>
+          <div className="coming-soon-block">
+            <p className="coming-soon-text">Detailed guide content coming soon.</p>
+          </div>
 
           <h2>Permits & Engineering</h2>
           <p>
-            <em>[Insert ChatGPT content here]</em><br/><br/>
+          </p>
+          <div className="coming-soon-block">
+            <p className="coming-soon-text">Detailed guide content coming soon.</p>
+          </div>
+          <p>
+            <br/><br/>
             Builders: Make sure your crew is compliant. <a href="https://360training.com" target="_blank" rel="noopener sponsored">Get your OSHA-10 certification here →</a>
           </p>
 
@@ -170,6 +184,7 @@ export default function CostGuidePage() {
               </Link>
             </div>
           </div>
+          <ReadNextCards />
         </article>
 
         <aside>

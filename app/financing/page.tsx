@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
+import ReadNextCards from '@/app/components/ReadNextCards';
 
 export const metadata: Metadata = {
-  title: 'How to Finance a Pole Barn or Barndominium in 2026 | Loans & Grants',
+  title: 'Pole Barn & Barndominium Financing Guide | Pole Barn Directory',
   description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Learn why traditional mortgages often don't cover post-frame construction.",
   alternates: {
     canonical: 'https://polebarndirectory.com/financing',
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Pole Barn Directory',
-    title: 'How to Finance a Pole Barn or Barndominium in 2026 | Loans & Grants',
+    title: 'Pole Barn & Barndominium Financing Guide | Pole Barn Directory',
     description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Learn why traditional mortgages often don't cover post-frame construction.",
     url: 'https://polebarndirectory.com/financing',
     images: [{
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How to Finance a Pole Barn or Barndominium in 2026 | Loans & Grants',
+    title: 'Pole Barn & Barndominium Financing Guide | Pole Barn Directory',
     description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Learn why traditional mortgages often don't cover post-frame construction.",
     images: ['https://polebarndirectory.com/og-image.jpg'],
   },
@@ -89,7 +91,8 @@ export default function FinancingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-      <header className="page-header">
+      <Breadcrumbs currentPage="Financing Options" />
+      <header className="page-header hero-pattern">
         <div className="container">
           <h1 className="animate-fade-up">Pole Barn & Barndominium Financing Guide</h1>
           <p className="animate-fade-up delay-1">
@@ -105,8 +108,10 @@ export default function FinancingPage() {
           <p>
             Traditional mortgages often don&apos;t cover post-frame construction. The phrase &quot;no foundation&quot; scares conventional lenders who rely on standard appraisal models.
             Many buyers don&apos;t know this until they&apos;re deep into the pre-approval process, leading to delayed starts and lost deposits.
-            <em>[Insert ChatGPT generated content explaining why specialized lenders are crucial]</em>
           </p>
+          <div className="coming-soon-block">
+            <p className="coming-soon-text">Detailed guide content coming soon.</p>
+          </div>
 
           <h2>Financing Options Explained</h2>
           <div style={{ overflowX: 'auto' }}>
@@ -126,42 +131,42 @@ export default function FinancingPage() {
                   <td>Barndominiums, turnkey builds</td>
                   <td>7–9%</td>
                   <td>15–30 yr</td>
-                  <td><a href="https://hfsfinancial.com" target="_blank" rel="noopener sponsored">HFS Financial</a></td>
+                  <td><a href="https://hfsfinancial.com" target="_blank" rel="noopener sponsored" className="pill-button">HFS Financial</a></td>
                 </tr>
                 <tr>
                   <td><strong>USDA Rural Development Loan</strong></td>
                   <td>Rural properties, first-time buyers</td>
                   <td>Below market</td>
                   <td>30 yr</td>
-                  <td><a href="https://www.rd.usda.gov" target="_blank" rel="noopener">USDA.gov</a></td>
+                  <td><a href="https://www.rd.usda.gov" target="_blank" rel="noopener" className="pill-button">USDA.gov</a></td>
                 </tr>
                 <tr>
                   <td><strong>Home Equity Loan / HELOC</strong></td>
                   <td>Existing homeowners adding a pole barn</td>
                   <td>6–8%</td>
                   <td>5–20 yr</td>
-                  <td><a href="#" data-affiliate="pending" rel="noopener sponsored">LendingTree</a></td>
+                  <td><a href="#" data-affiliate="pending" rel="noopener sponsored" className="pill-button">LendingTree</a></td>
                 </tr>
                 <tr>
                   <td><strong>Personal Loan (unsecured)</strong></td>
                   <td>Small projects under $50K</td>
                   <td>8–15%</td>
                   <td>2–7 yr</td>
-                  <td><a href="#" data-affiliate="pending" rel="noopener sponsored">LightStream</a></td>
+                  <td><a href="#" data-affiliate="pending" rel="noopener sponsored" className="pill-button">LightStream</a></td>
                 </tr>
                 <tr>
                   <td><strong>Contractor Financing</strong></td>
                   <td>Builders offering in-house financing via Enhancify</td>
                   <td>Varies</td>
                   <td>Varies</td>
-                  <td><Link href="https://polebarnfinder.com" target="_blank" rel="noopener">Ask your builder</Link></td>
+                  <td><Link href="https://polebarnfinder.com" target="_blank" rel="noopener" className="pill-button">Ask your builder</Link></td>
                 </tr>
                 <tr>
                   <td><strong>USDA REAP Grant</strong></td>
                   <td>Agricultural/commercial buildings</td>
                   <td>Grant (free $)</td>
                   <td>N/A</td>
-                  <td><a href="https://www.rd.usda.gov" target="_blank" rel="noopener">USDA.gov</a></td>
+                  <td><a href="https://www.rd.usda.gov" target="_blank" rel="noopener" className="pill-button">USDA.gov</a></td>
                 </tr>
               </tbody>
             </table>
@@ -197,6 +202,7 @@ export default function FinancingPage() {
               </Link>
             </div>
           </div>
+          <ReadNextCards />
         </article>
       </div>
     </section>

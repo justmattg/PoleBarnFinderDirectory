@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
+import Breadcrumbs from '@/app/components/Breadcrumbs';
+import ReadNextCards from '@/app/components/ReadNextCards';
 
 export const metadata: Metadata = {
-  title: '8 Questions to Ask Before Hiring a Pole Barn Builder | Free Checklist',
+  title: 'Builder Checklist: 8 Questions to Ask | Pole Barn Directory',
   description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame construction project. Free printable PDF.',
   alternates: {
     canonical: 'https://polebarndirectory.com/checklist',
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Pole Barn Directory',
-    title: '8 Questions to Ask Before Hiring a Pole Barn Builder | Free Checklist',
+    title: 'Builder Checklist: 8 Questions to Ask | Pole Barn Directory',
     description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame construction project. Free printable PDF.',
     url: 'https://polebarndirectory.com/checklist',
     images: [{
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '8 Questions to Ask Before Hiring a Pole Barn Builder | Free Checklist',
+    title: 'Builder Checklist: 8 Questions to Ask | Pole Barn Directory',
     description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame construction project. Free printable PDF.',
     images: ['https://polebarndirectory.com/og-image.jpg'],
   },
@@ -89,7 +91,8 @@ export default function ChecklistPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-      <header className="page-header">
+      <Breadcrumbs currentPage="Builder Checklist" />
+      <header className="page-header hero-pattern">
         <div className="container">
           <h1 className="animate-fade-up">The Pole Barn Builder Checklist</h1>
           <p className="animate-fade-up delay-1">
@@ -127,22 +130,33 @@ export default function ChecklistPage() {
               <p><strong>Red flag:</strong> any builder who wants 50%+ upfront. Industry standard: 10–20% deposit, progress payments tied to milestones (foundation complete, framing complete, dried-in, final), 10% holdback until punch list is done.</p>
             </div>
 
-            <div style={{ background: 'var(--color-bg-base)', padding: '4rem 2rem', textAlign: 'center', borderRadius: 'var(--border-radius-lg)', border: '2px dashed var(--color-border)', margin: '4rem 0' }}>
-              <h2 style={{ marginTop: 0 }}>Download the Printable Checklist (PDF)</h2>
-              <p className="mb-2">Get all 8 questions formatted as a 1-page printable checklist with blank lines for notes to take to your builder meetings.</p>
-              
-              <form style={{ maxWidth: '400px', margin: '2rem auto 0', display: 'flex', flexDirection: 'column', gap: '1rem' }} action="https://sendfox.com/form" method="POST" target="_blank">
-                <input type="text" name="first_name" placeholder="First Name" required 
-                  style={{ padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid var(--color-border)', width: '100%', fontFamily: 'inherit', fontSize: '1rem' }} />
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '4rem 0' }}>
+              <div style={{ 
+                background: '#F5F0EB', 
+                padding: '32px 40px', 
+                borderRadius: '12px', 
+                border: '1px solid rgba(0,0,0,0.08)',
+                maxWidth: '480px',
+                width: '100%',
+                textAlign: 'center',
+                boxShadow: 'var(--shadow-warm)'
+              }}>
+                <h2 style={{ marginTop: 0 }}>Download the Printable Checklist (PDF)</h2>
+                <p className="mb-2">Get all 8 questions formatted as a 1-page printable checklist with blank lines for notes to take to your builder meetings.</p>
                 
-                <input type="email" name="email" placeholder="Email Address" required 
-                  style={{ padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid var(--color-border)', width: '100%', fontFamily: 'inherit', fontSize: '1rem' }} />
-                
-                <button type="submit" className="btn" style={{ fontSize: '1.1rem', marginTop: '0.5rem' }}>
-                  Send My Free Checklist
-                </button>
-                <p style={{ fontSize: '0.85rem', opacity: 0.6 }}>Professional advice, no spam. Unsubscribe anytime.</p>
-              </form>
+                <form style={{ margin: '2rem auto 0', display: 'flex', flexDirection: 'column', gap: '1rem' }} action="https://sendfox.com/form" method="POST" target="_blank">
+                  <input type="text" name="first_name" placeholder="First Name" required 
+                    style={{ padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid var(--border-warm)', width: '100%', fontFamily: 'inherit', fontSize: '1rem', background: '#fff' }} />
+                  
+                  <input type="email" name="email" placeholder="Email Address" required 
+                    style={{ padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid var(--border-warm)', width: '100%', fontFamily: 'inherit', fontSize: '1rem', background: '#fff' }} />
+                  
+                  <button type="submit" className="btn btn-primary" style={{ fontSize: '1.1rem', marginTop: '0.5rem', width: '100%' }}>
+                    Send My Free Checklist
+                  </button>
+                  <p style={{ fontSize: '0.85rem', opacity: 0.6 }}>Professional advice, no spam. Unsubscribe anytime.</p>
+                </form>
+              </div>
             </div>
 
             <div className="text-center">
@@ -151,6 +165,7 @@ export default function ChecklistPage() {
                 Find builders in your state on PoleBarnFinder.com →
               </Link>
             </div>
+            <ReadNextCards />
           </article>
         </div>
       </section>
