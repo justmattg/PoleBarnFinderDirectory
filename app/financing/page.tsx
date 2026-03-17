@@ -151,14 +151,14 @@ export default function FinancingPage() {
                   <td>Existing homeowners adding a pole barn</td>
                   <td>6–8%</td>
                   <td>5–20 yr</td>
-                  <td><a href="#" data-affiliate="pending" rel="noopener sponsored" className="pill-button">LendingTree</a></td>
+                  <td><a href="https://lendingtree.com" target="_blank" rel="noopener sponsored" className="pill-button">LendingTree</a></td>
                 </tr>
                 <tr>
                   <td><strong>Personal Loan (unsecured)</strong></td>
                   <td>Small projects under $50K</td>
                   <td>8–15%</td>
                   <td>2–7 yr</td>
-                  <td><a href="#" data-affiliate="pending" rel="noopener sponsored" className="pill-button">LightStream</a></td>
+                  <td><a href="https://lightstream.com" target="_blank" rel="noopener sponsored" className="pill-button">LightStream</a></td>
                 </tr>
                 <tr>
                   <td><strong>Contractor Financing</strong></td>

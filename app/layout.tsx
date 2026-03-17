@@ -97,15 +97,14 @@ export default function RootLayout({
                 <h4 className="footer-heading">Company</h4>
                 <nav className="footer-links" aria-label="Company Navigation">
                   <Link href="/">Home</Link>
-                  <Link href="/#about">About Us</Link>
-                  <Link href="/#contact">Contact</Link>
+                  <a href="mailto:info@polebarndirectory.com">info@polebarndirectory.com</a>
                 </nav>
               </div>
             </div>
             
             <div className="footer-bottom">
               <div className="footer-disclaimer">
-                <p>
+                <p id="disclosure">
                   <Link href="/#disclosure" className="disclosure-link">Affiliate Disclosure</Link>: We may earn a commission if you purchase through our links at no extra cost to you. Every recommendation on this site is researched and independently verified.
                 </p>
               </div>

@@ -335,6 +335,10 @@ img {
   gap: 2.5rem;
 }
 
+.card-grid > :last-child:nth-child(3n - 1) {
+  grid-column: 2;
+}
+
 /* 5-card grid for homepage: 3 top, 2 bottom centered */
 @media (min-width: 1024px) {
   .card-grid-3-2 {
