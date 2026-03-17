@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+import Script from 'next/script';
 import Header from './components/Header';
 import ScrollBar from './components/ScrollBar';
 import BackToTop from './components/BackToTop';
@@ -47,6 +48,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${playfair.variable} textured-bg`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6Z7FMGQNCV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6Z7FMGQNCV');
+          `}
+        </Script>
         <ScrollHeader />
         <ScrollBar />
         <Header />
