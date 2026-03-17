@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from './components/Header';
 import ScrollBar from './components/ScrollBar';
 import BackToTop from './components/BackToTop';
+import ScrollHeader from './components/ScrollHeader';
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
 const playfair = Playfair_Display({ 
@@ -46,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} ${playfair.variable} textured-bg`}>
+        <ScrollHeader />
         <ScrollBar />
         <Header />
         

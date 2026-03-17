@@ -136,7 +136,7 @@ export default function HomePage() {
 
       <section className="section section-alt">
         <div className="container text-center">
-          <div className="content-wrapper" style={{maxWidth: '800px'}}>
+          <div className="content-wrapper">
             <h2 style={{marginTop: 0}}>Why PoleBarnDirectory.com?</h2>
             <p className="mb-3" style={{fontSize: '1.2rem', lineHeight: '1.8'}}>
               We&apos;ve been in the pole barn space since 2014. We don&apos;t build barns — we help you find the right builder, plan, and financing. Every recommendation on this site is researched and independently verified.

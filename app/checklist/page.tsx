@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import ReadNextCards from '@/app/components/ReadNextCards';
+import ChecklistForm from '../components/ChecklistForm';
 
 export const metadata: Metadata = {
   title: 'Builder Checklist: 8 Questions to Ask | Pole Barn Directory',
@@ -130,34 +131,7 @@ export default function ChecklistPage() {
               <p><strong>Red flag:</strong> any builder who wants 50%+ upfront. Industry standard: 10–20% deposit, progress payments tied to milestones (foundation complete, framing complete, dried-in, final), 10% holdback until punch list is done.</p>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '4rem 0' }}>
-              <div style={{ 
-                background: '#F5F0EB', 
-                padding: '32px 40px', 
-                borderRadius: '12px', 
-                border: '1px solid rgba(0,0,0,0.08)',
-                maxWidth: '480px',
-                width: '100%',
-                textAlign: 'center',
-                boxShadow: 'var(--shadow-warm)'
-              }}>
-                <h2 style={{ marginTop: 0 }}>Download the Printable Checklist (PDF)</h2>
-                <p className="mb-2">Get all 8 questions formatted as a 1-page printable checklist with blank lines for notes to take to your builder meetings.</p>
-                
-                <form style={{ margin: '2rem auto 0', display: 'flex', flexDirection: 'column', gap: '1rem' }} action="https://sendfox.com/form" method="POST" target="_blank">
-                  <input type="text" name="first_name" placeholder="First Name" required 
-                    style={{ padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid var(--border-warm)', width: '100%', fontFamily: 'inherit', fontSize: '1rem', background: '#fff' }} />
-                  
-                  <input type="email" name="email" placeholder="Email Address" required 
-                    style={{ padding: '0.85rem 1rem', borderRadius: '8px', border: '1px solid var(--border-warm)', width: '100%', fontFamily: 'inherit', fontSize: '1rem', background: '#fff' }} />
-                  
-                  <button type="submit" className="btn btn-primary" style={{ fontSize: '1.1rem', marginTop: '0.5rem', width: '100%' }}>
-                    Send My Free Checklist
-                  </button>
-                  <p style={{ fontSize: '0.85rem', opacity: 0.6 }}>Professional advice, no spam. Unsubscribe anytime.</p>
-                </form>
-              </div>
-            </div>
+            <ChecklistForm />
 
             <div className="text-center">
               <p className="mb-1" style={{fontWeight: 600}}>Ready to start comparing builders?</p>
