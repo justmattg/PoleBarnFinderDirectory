@@ -97,7 +97,7 @@ export default function RootLayout({
                 <h4 className="footer-heading">Company</h4>
                 <nav className="footer-links" aria-label="Company Navigation">
                   <Link href="/">Home</Link>
-                  <a href="mailto:info@polebarndirectory.com">info@polebarndirectory.com</a>
+                  <a href="mailto:info@polebarndirectory.com">Contact Us</a>
                 </nav>
               </div>
             </div>

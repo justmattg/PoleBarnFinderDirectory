@@ -135,7 +135,7 @@ export default function FinancingPage() {
                 <tr>
                   <td><strong>Construction-to-Permanent Loan</strong></td>
                   <td>Barndominiums, turnkey builds</td>
-                  <td>7–9%</td>
+                  <td>6.1–9%</td>
                   <td>15–30 yr</td>
                   <td><a href="https://hfsfinancial.com" target="_blank" rel="noopener sponsored" className="pill-button">HFS Financial</a></td>
                 </tr>
@@ -149,16 +149,16 @@ export default function FinancingPage() {
                 <tr>
                   <td><strong>Home Equity Loan / HELOC</strong></td>
                   <td>Existing homeowners adding a pole barn</td>
-                  <td>6–8%</td>
+                  <td>7–7.6%</td>
                   <td>5–20 yr</td>
-                  <td><a href="https://lendingtree.com" target="_blank" rel="noopener sponsored" className="pill-button">LendingTree</a></td>
+                  <td><a href="https://www.lendingtree.com" target="_blank" rel="noopener sponsored" className="pill-button">LendingTree</a></td>
                 </tr>
                 <tr>
                   <td><strong>Personal Loan (unsecured)</strong></td>
                   <td>Small projects under $50K</td>
-                  <td>8–15%</td>
+                  <td>8.7–25.3%</td>
                   <td>2–7 yr</td>
-                  <td><a href="https://lightstream.com" target="_blank" rel="noopener sponsored" className="pill-button">LightStream</a></td>
+                  <td><a href="https://www.lightstream.com/home-improvement" target="_blank" rel="noopener sponsored" className="pill-button">LightStream</a></td>
                 </tr>
                 <tr>
                   <td><strong>Contractor Financing</strong></td>

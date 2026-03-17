@@ -333,10 +333,24 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
+  justify-items: center;
 }
 
 .card-grid > :last-child:nth-child(3n - 1) {
   grid-column: 2;
+}
+
+@media (min-width: 769px) {
+  .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  .card-grid > * {
+    flex: 0 1 calc(33.333% - 2.5rem);
+    max-width: calc(33.333% - 2.5rem);
+  }
 }
 
 /* 5-card grid for homepage: 3 top, 2 bottom centered */
