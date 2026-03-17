@@ -109,9 +109,15 @@ export default function FinancingPage() {
             Traditional mortgages often don&apos;t cover post-frame construction. The phrase &quot;no foundation&quot; scares conventional lenders who rely on standard appraisal models.
             Many buyers don&apos;t know this until they&apos;re deep into the pre-approval process, leading to delayed starts and lost deposits.
           </p>
-          <div className="coming-soon-block">
-            <p className="coming-soon-text">Detailed guide content coming soon.</p>
-          </div>
+          <p>
+            What usually stops the deal now is not the quality of your build but the way conventional appraisals work. Your lender needs comparable sales, and in most rural counties there are too few recent sales of similar metal-frame residences to establish them. Without comps, the appraiser cannot support fair market value, and without fair market value, the loan dies on the desk. That is a built-in limitation of the system, not a judgment about your plans. A $200,000 barndominium with zero local comps can get the same rejection as a shack because the model cannot tell the difference. That is why many well-qualified buyers end up with specialty lenders instead, where practical rates currently range from 6.1% to 7.5% APR rather than the broader construction loan market average of 7.5% to 9.0%.
+          </p>
+          <p>
+            The next issue is classification, and it affects more than paperwork. Your county&apos;s property classification influences your insurance, your property taxes, and whether residential lenders will even consider the file. Some counties still classify barndominiums as agricultural structures even if the building has a full kitchen, bathrooms, and HVAC. That can push you out of standard homeowner&apos;s coverage and into a commercial farm policy that costs more and protects less. Barndominium insurance commonly runs $1,000–$2,500 per year in standard markets and up to $3,000 in high-risk weather states, compared with about $1,516 for a traditional home. Industry experts also warn that premiums can climb because insurers remain cautious about structures that combine living space with workshops or heavy equipment storage. Before you apply anywhere, call your county assessor&apos;s office and ask: &quot;How would a metal-frame residence with living quarters be classified on this parcel?&quot;
+          </p>
+          <p>
+            The good news is that you are not stuck. Specialized construction-to-permanent lenders exist for post-frame and barndominium projects, and they underwrite them very differently. Rural 1st, for example, currently offers 6.53% APR and a rate-reduction program that lets you lower your rate after closing if the market drops for a flat $750 fee. These lenders use appraisers who understand non-traditional construction, structure draw schedules around the reality that the shell can go up in days while interior work takes months, and maintain their own comparable databases so your file does not collapse at appraisal. If your property is in an eligible rural area, USDA Direct Loans can go as low as 5.125% and may be subsidized to 1% for qualifying low-income borrowers, while USDA Guaranteed Loans average around 6.31% with only 1% upfront and 0.35% annual fees.
+          </p>
 
           <h2>Financing Options Explained</h2>
           <div style={{ overflowX: 'auto' }}>
