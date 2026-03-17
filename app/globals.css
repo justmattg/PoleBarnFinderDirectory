@@ -331,25 +331,18 @@ img {
 /* Cards */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  gap: 2.0rem;
   justify-items: center;
 }
 
-.card-grid > :last-child:nth-child(3n - 1) {
-  grid-column: 2;
-}
+
 
 @media (min-width: 769px) {
   .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2.5rem;
-  }
-  .card-grid > * {
-    flex: 0 1 calc(33.333% - 2.5rem);
-    max-width: calc(33.333% - 2.5rem);
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
 
@@ -384,6 +377,8 @@ img {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  min-width: 0;
+  width: 100%;
 }
 
 .path-card:hover, .card:hover {
