@@ -1,4 +1,8 @@
 :root {
+  /* Fonts */
+  --font-dm-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+
   /* Color System */
   /* Primary Palette */
   --bg-cream:        #FAF7F2;     /* Main page background */

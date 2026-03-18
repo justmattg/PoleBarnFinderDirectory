@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 import Script from 'next/script';
@@ -7,14 +6,6 @@ import Header from './components/Header';
 import ScrollBar from './components/ScrollBar';
 import BackToTop from './components/BackToTop';
 import ScrollHeader from './components/ScrollHeader';
-
-const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
-const playfair = Playfair_Display({ 
-  weight: ['400', '500', '600', '700'], 
-  subsets: ['latin'], 
-  variable: '--font-playfair',
-  display: 'swap'
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://polebarndirectory.com'),
@@ -47,7 +38,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${playfair.variable} textured-bg`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..1000&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      </head>
+      <body className="textured-bg">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-6Z7FMGQNCV"
           strategy="afterInteractive"
