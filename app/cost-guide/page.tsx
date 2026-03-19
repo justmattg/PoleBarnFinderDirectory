@@ -354,7 +354,7 @@ export default function CostGuidePage() {
             <div className="card-icon" style={{width: '60px', height: '60px', fontSize: '1.5rem'}}>🏦</div>
             <h3 className="card-title">Need Financing?</h3>
             <p className="card-text">Construction loans with rates from 7-9%. Pre-qualify in 5 minutes without affecting your credit score.</p>
-            <a href="https://hfsfinancial.com" target="_blank" rel="noopener sponsored" className="btn-primary" style={{ width: '100%', padding: '0.75rem' }}>
+            <a href="https://www.lightstream.com/" target="_blank" rel="noopener sponsored" className="btn-primary" style={{ width: '100%', padding: '0.75rem' }}>
               Check Rates Today
             </a>
           </div>

@@ -200,7 +200,7 @@ export default function FinancingPage() {
             <h3 style={{ marginTop: 0 }}>Ready to fund your build?</h3>
             <p className="mb-2">Check your rates without impacting your credit score.</p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href="https://hfsfinancial.com" target="_blank" rel="noopener sponsored" className="btn-primary">
+              <a href="https://www.lightstream.com/" target="_blank" rel="noopener sponsored" className="btn-primary">
                 Pre-qualify for a construction loan today
               </a>
               <Link href="https://polebarnfinder.com" target="_blank" rel="noopener" className="btn btn-secondary">
