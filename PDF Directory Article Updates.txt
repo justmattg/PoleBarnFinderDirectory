@@ -1,0 +1,133 @@
+In the PoleBarnFinderDirectory repo, make these two changes:
+
+CHANGE 1: Open app/cost-guide/page.tsx
+
+Find and replace these 4 placeholder strings with the content below. Wrap every paragraph in <p> tags. Wrap every subsection title (Foundation Type, Steel Gauge and Roofing Material, etc.) in <h3> tags. Preserve all surrounding JSX structure — do not modify anything outside the placeholder strings.
+
+PLACEHOLDER 1 — find this exact string (including brackets and any italic/emphasis tags):
+[Insert ChatGPT-generated expanded content for Foundation Type, Steel Gauge, Insulation, Overhead Doors, Electrical/Plumbing, Permits, Labor Rates, Shell-Only vs Turnkey]
+
+Replace with BLOCK 1:
+
+Foundation Type
+
+Your foundation choice sets the tone for the whole budget. A concrete slab runs $4–$12 per square foot installed, with a 4-inch residential slab on the low end and a 6-inch heavy-duty slab with reinforcement on the high end. A gravel pad usually costs $2,000–$4,000 total for a standard pole barn footprint, and per-square-foot costs range from $1.25–$10 depending on pad size. Smaller pads cost more per square foot, while large pads 1,000+ sq ft usually land in the $2–$5 range.
+
+If you are building a workshop or barndominium, the slab is not optional. You need a hard, stable finished floor that can handle interior framing, plumbing, and daily use. Gravel works well for agricultural storage where you are parking equipment or storing hay. Concrete piers at $150–$300 each are usually the cheapest route for a basic pole barn on well-drained soil, but they are not the answer for every use case.
+
+Steel Gauge and Roofing Material
+
+The panel package is one place where cheap gets expensive later. You will usually be choosing between 26-gauge and 29-gauge steel panels. The 29-gauge saves money upfront, but it dents easier and tends to deteriorate within 10 years. If you expect the building to last 20+ years, 26-gauge is the industry standard for a reason. It holds up better to weather, handling, and the normal abuse a working building sees over time.
+
+Roof profile matters too. Standing seam roofing costs roughly 2x exposed fastener panels, but it eliminates leak points and commonly lasts 40–50 years. If your site is coastal or carries constant humidity, Galvalume coating outperforms standard G90 galvanized because the aluminum-zinc alloy resists corrosion better. One more thing builders know and buyers forget: steel pricing moves around. Get quotes within 30 days of your build date, not months in advance.
+
+Insulation Package
+
+Insulation is not one line item. It is a full system, and the wrong system will make the building sweat like a cold drink in August. Closed-cell spray foam costs $1.15–$2.90 per board foot installed. Blown-in insulation runs $0.90–$2.40 per square foot. Fiberglass batts run $0.80–$2.60 per square foot for standard unfaced batts, and up to $4.00 per square foot for premium vinyl-backed systems with metal liner panels.
+
+For a barndominium or climate-controlled workshop, spray foam is non-negotiable because it air-seals, insulates, and acts as a vapor barrier at the same time. Batts are adequate for unheated storage where temperature swings are not a concern. Pay attention to vapor barrier placement. It always belongs on the warm side of the wall assembly. Get that wrong and you trap condensation inside the cavity, which starts rotting your framing from the inside out.
+
+Overhead Door Count and Size
+
+Overhead doors can quietly blow up a budget faster than most buyers expect. Standard commercial sectional doors run $1,200–$4,000 per unit installed. Add insulation and the price climbs another 30–50%. On a 40×60 shop with three insulated overhead doors, you can easily spend $5,000–$12,000+ on doors alone. If the building will be heated, specify insulated doors with at least R-12. Anything less leaves you with a giant heat leak every time winter shows up.
+
+This line item gets underestimated constantly because people price the shell and forget the openings. A big door is not just a door. It changes framing, hardware, tracks, operators, and often installation labor. On real jobs, overhead doors are usually the second-largest variable cost after the foundation. If your quote looks surprisingly low, check whether the door package is actually included and what insulation level you are getting.
+
+Electrical and Plumbing
+
+Utility work is where vague quotes turn into ugly change orders. Electrical rough-in can run $2,800–$10,000+ for a basic 200A panel with lighting and outlets, $5,000–$15,000 for a fully wired workshop with 220V circuits, and up to $30,000 for a complete barndominium with underground service trenching. Plumbing rough-in typically runs $4–$6 per square foot for new construction, and adding a basic bathroom usually costs $4,000–$12,000.
+
+Some builders roll electrical into turnkey pricing and others leave it completely out. That single gap is the #1 source of "my pole barn cost way more than quoted" complaints. Before you sign anything, get the electrical scope in writing. You want to see panel size, outlet count, lighting allowances, trenching, and any 220V service spelled out. Plumbing needs the same treatment, especially if the building will include a bathroom, utility sink, or future apartment space.
+
+Regional Labor Rates
+
+Labor is never a throwaway number, and it moves more than most online cost calculators admit. On a basic shell build, labor usually accounts for 25–35% of total cost. On a turnkey project with concrete flatwork and interior finishing, labor often climbs to 40–60%. Gulf Coast and Southeast framing crews generally run $35–$55/hr. Midwest labor typically lands at $40–$65/hr. Northeast and West Coast crews are commonly $55–$85/hr, especially where skilled post-frame labor is tight.
+
+Rural pricing can fool you. You might assume a remote site means cheaper labor, but that is not how this trade works. If there are only a few qualified post-frame crews in your area, you get longer lead times and less pricing pressure. If a crew drives 90 minutes each way to reach your property, they build fuel, time, and mobilization cost into the bid. Remote does not automatically mean discounted.
+
+Permits and Engineering
+
+Permits and engineering are the parts buyers like to treat as paperwork until the county says otherwise. Building permits usually run $150 to $2,500, which is roughly 0.50–2.00% of total construction cost. In areas with stricter wind, snow, or seismic requirements, structural engineering adds another $1,200–$4,800. That covers the math behind your trusses, foundations, connections, and load paths. Without it, you are guessing on the most expensive structure on your property.
+
+If you are upgrading a shell to meet full residential building codes, expect emergency egress, attic ventilation, and foundation anchoring requirements to add 10–15% to shell cost, especially in high-wind coastal regions. Skipping permits looks cheaper only until you try to sell, file an insurance claim, or explain yourself to a county inspector. The small money you save early can become a very large bill later.
+
+The Shell-Only vs. Turnkey Trap
+
+This is where most cost guides go sideways. Shell-only pricing usually runs $15–$40 per square foot and generally covers posts, trusses, roof, siding, and sometimes a basic entry door. No insulation, no electrical, no plumbing, no concrete floor, and no overhead doors. Turnkey pricing for a fully finished, move-in ready building runs $65–$200+ per square foot depending on finishes. That spread is not cosmetic. It is the difference between a weather-tight shell and a usable building.
+
+A lot of websites make it sound like turnkey pricing is only 2x to 2.5x shell pricing. In practice, it is a 2x to 5x multiplier. That is why so many real-world projects blow past the number buyers saw online. Most "pole barn cost" numbers floating around are shell-only prices. The first question you should ask any builder is simple and direct: What exactly is and is not included in this number?
+
+---
+
+PLACEHOLDER 2 — find this exact string:
+[Insert ChatGPT-generated expanded content for Top 15 states cost index]
+
+Replace with BLOCK 2 (convert the 15-state list into an HTML <table> with class="data-table". Three columns: State, Cost Modifier, Notes. Use the same dark header row and alternating row styling as the pricing table already on the page):
+
+Pole barn costs swing from state to state because the building code is reacting to local weather and soil, not because a contractor feels like charging more. Snow load is the first big driver. In heavy-snow states, the truss package has to carry more live load, which pushes engineering and materials up by $2,000–$5,000 compared with a similar Texas building. Wind zone is the next one. Hurricane and high-wind regions need more bracing, thicker gauge steel, stronger uplift protection, and engineered connections that keep the structure tied together under pressure. Those details do not show well in a glossy brochure, but they show up fast in the price.
+
+Frost depth and labor market finish the job. In colder states, deeper frost lines mean deeper post embedment or a more expensive foundation system, and both add labor and material cost before the shell even starts going up. Labor is just as uneven. Some states have deep post-frame builder benches and competitive pricing, while others have fewer qualified crews, higher prevailing wages, or both. A strong local builder market can keep prices in check even where engineering loads are higher. A thin labor market can make a simple building expensive, especially if your crew is traveling in from another county or metro area.
+
+State table data (render as HTML table):
+Texas — 1.0x — Baseline. Large builder pool, moderate material costs, minimal snow/seismic requirements.
+Ohio — 0.95x — Slightly below average labor costs, moderate snow loads.
+Indiana — 0.90x — One of the cheapest states for post-frame construction. Strong builder density, low labor costs. Permit fees typically $500–$1,500.
+Michigan — 1.05x — Snow load engineering adds modest cost. Strong Amish builder network keeps labor competitive.
+Missouri — 0.92x — Low labor, minimal code complexity outside Kansas City and St. Louis metro.
+North Carolina — 0.95x — Moderate costs. Coastal counties add wind zone premiums of 5–10%.
+Georgia — 0.90x — Low labor rates, minimal snow/seismic. Construction costs average $100–$150 per sq ft for finished barndominiums.
+Florida — 1.20x — Hurricane wind zone engineering adds $3,000–$8,000. Miami-Dade county is the most expensive jurisdiction in the state.
+Pennsylvania — 1.05x — Moderate snow loads, slightly above-average labor. Strong Amish builder presence.
+Wisconsin — 1.10x — Heavy snow load engineering. Competitive labor from the state's established post-frame industry.
+Minnesota — 1.15x — Heaviest snow loads in the lower 48. Truss packages cost $2,000–$5,000 more than Texas equivalent.
+Tennessee — 0.90x — Low labor, minimal code complexity. Fast-growing pole barn market.
+Oklahoma — 0.85x — Lowest-cost state on this list. Low labor, low material costs, minimal engineering requirements.
+Colorado — 1.10x — Altitude and snow loads add engineering cost. Front Range labor rates are above the national average.
+California — 1.35x — Seismic engineering, high labor rates ($65–$85/hr), complex permitting process. Most expensive state for pole barn construction.
+
+These are statewide averages, not promises. Site-specific factors can move your real cost 10–20% in either direction. Distance from supplier hubs matters. Site accessibility matters even more, especially if a concrete truck cannot easily reach your property. County code requirements can shift quickly once local inspectors review your plans. In places like New England, site preparation alone, including clearing, septic, and well work, can cost $25,000–$40,000 before the building shell arrives.
+
+---
+
+PLACEHOLDER 3 — find this exact string:
+[Insert ChatGPT-generated expanded content mapping pros/cons]
+
+Replace with BLOCK 3:
+
+A kit can look attractive on paper because the upfront number is clean and simple. Pole barn kits usually cost $10–$30 per square foot for materials only, and a standard 30×40 kit typically runs $12,000–$36,000 depending on quality and upgrades. Most kits ship with pre-engineered components, cut lists, hardware, and assembly instructions, which helps tighten up the ordering process. Delivery is also typically 2–4 weeks faster than a custom build timeline, so if you are racing weather or trying to get a shell up quickly, that shorter runway has real value.
+
+The catch is that the kit price only covers materials. You still need a crew to handle framing and installation, and professional labor usually runs $5–$15 per square foot. Then you add the foundation at $4,000–$15,000+, permits at $150–$2,500, and the job of coordinating every trade yourself. By the time labor, foundation, permits, electrical, and plumbing are added, a kit build is usually only 10–15% less than a turnkey custom build. You save some money, but you also take on the scheduling, mistakes, and liability yourself.
+
+A custom build costs more upfront because one builder is carrying the whole job. That includes materials, labor, foundation, permits, inspections, and warranty. If something goes wrong, you have one phone number to call instead of a chain of finger-pointing between suppliers and subs. The warranty also covers both materials and workmanship. With quality builders using pre-engineered structures, you still see roughly a 30% reduction in overall construction costs compared to traditional stick-built homes, which keeps turnkey pole barns and barndominiums competitive even with full-service pricing.
+
+For most first-time pole barn buyers, a turnkey custom build eliminates the risk of coordination headaches and surprise costs. For experienced builders or hands-on DIYers, a kit can save 10–15% on total project cost — but only if you accurately budget for every line item beyond the kit itself.
+
+---
+
+PLACEHOLDER 4 — find this exact string:
+[Insert ChatGPT content here]
+
+Replace with BLOCK 4:
+
+Permits protect the building you are paying for. An unpermitted structure cannot be insured, so if a storm tears it up, you absorb the entire loss yourself. It also hurts resale value because a buyer's lender will flag it during due diligence, and some counties can issue a demolition order if the structure does not meet code. Against that risk, the permit fee is small money. Most building permits run $150–$2,500, which is roughly 0.50–2.00% of total construction cost. On a structure that may serve your property for decades, that fee is just basic asset protection.
+
+Engineering is the part that proves the building works on your site under your local code. In areas with strict wind, snow, or seismic requirements, structural engineering adds $1,200–$4,800 to the project. That typically covers engineered truss plans, stamped foundation designs, and the compliance calculations the county wants to see before issuing approval. If the shell has to meet residential code, upgrades like emergency egress, attic ventilation, and foundation anchoring can add 10–15% to shell cost in high-wind coastal regions. Good builders include engineering in the bid. If the quote does not mention it, ask. If a builder tells you that you do not need engineering, find a different builder.
+
+---
+
+CHANGE 2: Open app/financing/page.tsx
+
+Find this exact placeholder string (including any italic/emphasis tags or JSX wrapping it):
+[Insert ChatGPT generated content explaining why specialized lenders are crucial]
+
+Delete the entire placeholder (brackets, italic tags, and all) and replace with these 3 paragraphs wrapped in <p> tags. They must appear directly after the existing paragraph that ends with "...leading to delayed starts and lost deposits."
+
+What usually stops the deal now is not the quality of your build but the way conventional appraisals work. Your lender needs comparable sales, and in most rural counties there are too few recent sales of similar metal-frame residences to establish them. Without comps, the appraiser cannot support fair market value, and without fair market value, the loan dies on the desk. That is a built-in limitation of the system, not a judgment about your plans. A $200,000 barndominium with zero local comps can get the same rejection as a shack because the model cannot tell the difference. That is why many well-qualified buyers end up with specialty lenders instead, where practical rates currently range from 6.1% to 7.5% APR rather than the broader construction loan market average of 7.5% to 9.0%.
+
+The next issue is classification, and it affects more than paperwork. Your county's property classification influences your insurance, your property taxes, and whether residential lenders will even consider the file. Some counties still classify barndominiums as agricultural structures even if the building has a full kitchen, bathrooms, and HVAC. That can push you out of standard homeowner's coverage and into a commercial farm policy that costs more and protects less. Barndominium insurance commonly runs $1,000–$2,500 per year in standard markets and up to $3,000 in high-risk weather states, compared with about $1,516 for a traditional home. Industry experts also warn that premiums can climb because insurers remain cautious about structures that combine living space with workshops or heavy equipment storage. Before you apply anywhere, call your county assessor's office and ask: "How would a metal-frame residence with living quarters be classified on this parcel?"
+
+The good news is that you are not stuck. Specialized construction-to-permanent lenders exist for post-frame and barndominium projects, and they underwrite them very differently. Rural 1st, for example, currently offers 6.53% APR and a rate-reduction program that lets you lower your rate after closing if the market drops for a flat $750 fee. These lenders use appraisers who understand non-traditional construction, structure draw schedules around the reality that the shell can go up in days while interior work takes months, and maintain their own comparable databases so your file does not collapse at appraisal. If your property is in an eligible rural area, USDA Direct Loans can go as low as 5.125% and may be subsidized to 1% for qualifying low-income borrowers, while USDA Guaranteed Loans average around 6.31% with only 1% upfront and 0.35% annual fees.
+
+---
+
+Commit and push directly to the main branch. Do not create a feature branch.
