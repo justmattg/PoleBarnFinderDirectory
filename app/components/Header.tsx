@@ -13,8 +13,8 @@ export default function Header() {
 
   // Close menu when route changes
   useEffect(() => {
-    if (isMenuOpen) closeMenu();
-  }, [pathname, isMenuOpen]);
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   // Prevent scrolling when menu is open
   useEffect(() => {
