@@ -102,7 +102,7 @@ export default function CostGuidePage() {
       </header>
 
       <section className="section">
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 350px', gap: '4rem' }}>
+        <div className="container content-with-sidebar">
           <article className="content-wrapper">
           <h2>Cost by Size (National Averages)</h2>
           <table className="data-table">
@@ -338,7 +338,7 @@ export default function CostGuidePage() {
             <h3 style={{ marginTop: 0 }}>Ready to get a firm price?</h3>
             <p className="mb-2">Talk to local builders who know regional pricing and requirements.</p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <Link href="https://polebarnfinder.com" target="_blank" rel="noopener" className="btn">
+              <Link href="https://polebarnfinder.com" target="_blank" rel="noopener" className="btn-primary">
                 Get free quotes from builders in your area →
               </Link>
               <Link href="/floor-plans" className="btn btn-secondary">
@@ -350,11 +350,11 @@ export default function CostGuidePage() {
         </article>
 
         <aside>
-          <div className="card" style={{ position: 'sticky', top: '120px' }}>
+          <div className="card sticky-sidebar">
             <div className="card-icon" style={{width: '60px', height: '60px', fontSize: '1.5rem'}}>🏦</div>
             <h3 className="card-title">Need Financing?</h3>
             <p className="card-text">Construction loans with rates from 7-9%. Pre-qualify in 5 minutes without affecting your credit score.</p>
-            <a href="https://hfsfinancial.com" target="_blank" rel="noopener sponsored" className="btn" style={{ width: '100%', padding: '0.75rem' }}>
+            <a href="https://hfsfinancial.com" target="_blank" rel="noopener sponsored" className="btn-primary" style={{ width: '100%', padding: '0.75rem' }}>
               Check Rates Today
             </a>
           </div>

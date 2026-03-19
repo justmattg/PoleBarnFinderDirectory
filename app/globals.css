@@ -147,6 +147,27 @@ img {
   margin: 0 auto;
 }
 
+.content-with-sidebar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 4rem;
+}
+
+.sticky-sidebar {
+  position: sticky;
+  top: 120px;
+}
+
+@media (max-width: 1024px) {
+  .content-with-sidebar {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .sticky-sidebar {
+    position: static;
+  }
+}
+
 /* Buttons */
 .btn-primary {
   background: var(--barn-red);

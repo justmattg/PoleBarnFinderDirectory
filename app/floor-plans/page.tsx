@@ -79,35 +79,35 @@ export default function FloorPlansPage() {
               <div className="card-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
               <div className="card-title" style={{fontWeight: "bold", fontSize: "1.25rem", marginBottom: "0.5rem"}}>Barndominium Plans</div>
               <p className="card-text">Open-concept living + shop space. 1,200–4,000 sq ft.</p>
-              <span className="btn" style={{width: '100%'}}>Browse Plans →</span>
+              <span className="btn-primary" style={{width: '100%'}}>Browse Plans →</span>
             </a>
 
             <a href="https://mybarndominiumplans.com" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-2">
               <div className="card-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 21v-6h6v6"></path></svg></div>
               <div className="card-title" style={{fontWeight: "bold", fontSize: "1.25rem", marginBottom: "0.5rem"}}>Equestrian / Arena Plans</div>
               <p className="card-text">Indoor arenas, barn + apartment combos, tack rooms.</p>
-              <span className="btn" style={{width: '100%'}}>Browse Plans →</span>
+              <span className="btn-primary" style={{width: '100%'}}>Browse Plans →</span>
             </a>
 
             <a href="https://barndominiumplans.com" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-3">
               <div className="card-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
               <div className="card-title" style={{fontWeight: "bold", fontSize: "1.25rem", marginBottom: "0.5rem"}}>Workshop & Hobby Shop</div>
               <p className="card-text">Insulated shops, man caves, oversized garages.</p>
-              <span className="btn" style={{width: '100%'}}>Browse Plans →</span>
+              <span className="btn-primary" style={{width: '100%'}}>Browse Plans →</span>
             </a>
 
             <a href="https://advancedhouseplans.com" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-1">
               <div className="card-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-10"></path><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path></svg></div>
               <div className="card-title" style={{fontWeight: "bold", fontSize: "1.25rem", marginBottom: "0.5rem"}}>Agricultural & Storage</div>
               <p className="card-text">Hay barns, equipment storage, livestock shelters.</p>
-              <span className="btn" style={{width: '100%'}}>Browse Plans →</span>
+              <span className="btn-primary" style={{width: '100%'}}>Browse Plans →</span>
             </a>
 
             <a href="https://advancedhouseplans.com" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-2">
               <div className="card-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg></div>
               <div className="card-title" style={{fontWeight: "bold", fontSize: "1.25rem", marginBottom: "0.5rem"}}>Commercial & Industrial</div>
               <p className="card-text">Warehouses, retail, multi-use buildings.</p>
-              <span className="btn" style={{width: '100%'}}>Browse Plans →</span>
+              <span className="btn-primary" style={{width: '100%'}}>Browse Plans →</span>
             </a>
 
             <Link href="https://polebarnfinder.com" target="_blank" rel="noopener" className="path-card animate-fade-up delay-3">
@@ -169,7 +169,7 @@ export default function FloorPlansPage() {
                 </tr>
                 <tr>
                   <td><strong>Link</strong></td>
-                  <td><a href="https://advancedhouseplans.com" target="_blank" rel="noopener sponsored" className="btn" style={{padding: '0.5rem 1rem', fontSize: '0.9rem'}}>Browse Plans →</a></td>
+                  <td><a href="https://advancedhouseplans.com" target="_blank" rel="noopener sponsored" className="btn-primary" style={{padding: '0.5rem 1rem', fontSize: '0.9rem'}}>Browse Plans →</a></td>
                   <td><a href="https://mybarndominiumplans.com" target="_blank" rel="noopener sponsored" className="btn btn-secondary" style={{padding: '0.5rem 1rem', fontSize: '0.9rem'}}>Browse Plans →</a></td>
                   <td><a href="https://barndominiumplans.com" target="_blank" rel="noopener sponsored" className="btn btn-secondary" style={{padding: '0.5rem 1rem', fontSize: '0.9rem'}}>Browse Plans →</a></td>
                 </tr>
