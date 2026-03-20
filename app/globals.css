@@ -147,6 +147,39 @@ img {
   margin: 0 auto;
 }
 
+/* Article content spacing */
+.content-wrapper h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content-wrapper h2:first-child {
+  margin-top: 0;
+}
+
+.content-wrapper h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.content-wrapper p {
+  margin-bottom: 1.5rem;
+}
+
+.content-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+.content-wrapper ul,
+.content-wrapper ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.content-wrapper li {
+  margin-bottom: 0.5rem;
+}
+
 .content-with-sidebar {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 350px;
