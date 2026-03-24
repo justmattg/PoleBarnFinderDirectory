@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL('https://polebarndirectory.com'),
   title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
-  description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+  description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, and explore financing options.',
   referrer: 'origin-when-cross-origin',
   icons: {
     icon: '/favicon.ico',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Pole Barn Directory',
     title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
-    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, and explore financing options.',
     url: 'https://polebarndirectory.com',
   }
 };

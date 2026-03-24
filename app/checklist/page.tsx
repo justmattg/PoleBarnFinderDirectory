@@ -7,7 +7,7 @@ import ChecklistForm from '../components/ChecklistForm';
 
 export const metadata: Metadata = {
   title: 'Builder Checklist: 8 Questions to Ask | Pole Barn Directory',
-  description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame construction project. Free printable PDF.',
+  description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame project.',
   alternates: {
     canonical: 'https://polebarndirectory.com/checklist',
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Pole Barn Directory',
     title: 'Builder Checklist: 8 Questions to Ask | Pole Barn Directory',
-    description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame construction project. Free printable PDF.',
+    description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame project.',
     url: 'https://polebarndirectory.com/checklist',
     images: [{
       url: 'https://polebarndirectory.com/og-image.jpg',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Builder Checklist: 8 Questions to Ask | Pole Barn Directory',
-    description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame construction project. Free printable PDF.',
+    description: 'Avoid budget blowouts and bad contractors. These 8 questions protect your money on any pole barn, barndominium, or post-frame project.',
     images: ['https://polebarndirectory.com/og-image.jpg'],
   },
 };

@@ -4,7 +4,7 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
-  description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+  description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, and explore financing options.',
   alternates: {
     canonical: 'https://polebarndirectory.com/',
   },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Pole Barn Directory',
     title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
-    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, and explore financing options.',
     url: 'https://polebarndirectory.com/',
     images: [{
       url: 'https://polebarndirectory.com/og-image.jpg',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pole Barn Directory — Find Builders, Compare Costs, Browse Plans',
-    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, browse floor plans, and explore financing options.',
+    description: 'Your starting point for pole barn and barndominium projects. Compare 2,100+ builders, get 2026 cost estimates, and explore financing options.',
     images: ['https://polebarndirectory.com/og-image.jpg'],
   },
 };

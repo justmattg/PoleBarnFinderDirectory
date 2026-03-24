@@ -6,7 +6,7 @@ import ReadNextCards from '@/app/components/ReadNextCards';
 
 export const metadata: Metadata = {
   title: 'Pole Barn & Barndominium Financing Guide | Pole Barn Directory',
-  description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Learn why traditional mortgages often don't cover post-frame construction.",
+  description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Why traditional mortgages often don't apply.",
   alternates: {
     canonical: 'https://polebarndirectory.com/financing',
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Pole Barn Directory',
     title: 'Pole Barn & Barndominium Financing Guide | Pole Barn Directory',
-    description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Learn why traditional mortgages often don't cover post-frame construction.",
+    description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Why traditional mortgages often don't apply.",
     url: 'https://polebarndirectory.com/financing',
     images: [{
       url: 'https://polebarndirectory.com/og-image.jpg',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pole Barn & Barndominium Financing Guide | Pole Barn Directory',
-    description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Learn why traditional mortgages often don't cover post-frame construction.",
+    description: "Construction loans, USDA rural development, HELOCs, and REAP grants for pole barn projects. Why traditional mortgages often don't apply.",
     images: ['https://polebarndirectory.com/og-image.jpg'],
   },
 };
