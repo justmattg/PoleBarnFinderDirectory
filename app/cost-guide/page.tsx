@@ -308,6 +308,16 @@ export default function CostGuidePage() {
             These are statewide averages, not promises. Site-specific factors can move your real cost 10–20% in either direction. Distance from supplier hubs matters. Site accessibility matters even more, especially if a concrete truck cannot easily reach your property. County code requirements can shift quickly once local inspectors review your plans. In places like New England, site preparation alone, including clearing, septic, and well work, can cost $25,000–$40,000 before the building shell arrives.
           </p>
 
+          <div style={{ marginTop: '3rem', marginBottom: '3rem', padding: '3rem', background: 'var(--color-stone)', borderRadius: 'var(--border-radius-lg)', border: '1px solid var(--color-border)' }}>
+            <h3 style={{ marginTop: 0 }}>Metal Building Kit Pricing</h3>
+            <p style={{ marginBottom: '1.5rem' }}>Pre-engineered metal building kits can cost significantly less than custom stick-built pole barns. Whitestar Metal Buildings ships kits nationwide with 4–6 week lead times, including engineering.</p>
+            <div>
+              <a href="https://go.polebarnfinder.com/whitestar" target="_blank" rel="nofollow sponsored" className="btn-primary">
+                Get a Free Metal Building Quote →
+              </a>
+            </div>
+          </div>
+
           <h2 id="kit-vs-custom">Kit vs. Custom Build</h2>
           <p>
             A kit can look attractive on paper because the upfront number is clean and simple. Pole barn kits usually cost $10–$30 per square foot for materials only, and a standard 30×40 kit typically runs $12,000–$36,000 depending on quality and upgrades. Most kits ship with pre-engineered components, cut lists, hardware, and assembly instructions, which helps tighten up the ordering process. Delivery is also typically 2–4 weeks faster than a custom build timeline, so if you are racing weather or trying to get a shell up quickly, that shorter runway has real value.
