@@ -310,10 +310,10 @@ export default function CostGuidePage() {
 
           <div style={{ marginTop: '3rem', marginBottom: '3rem', padding: '3rem', background: 'var(--color-stone)', borderRadius: 'var(--border-radius-lg)', border: '1px solid var(--color-border)' }}>
             <h3 style={{ marginTop: 0 }}>Metal Building Kit Pricing</h3>
-            <p style={{ marginBottom: '1.5rem' }}>Pre-engineered metal building kits can cost significantly less than custom stick-built pole barns. Whitestar Metal Buildings ships kits nationwide with 4–6 week lead times, including engineering.</p>
+            <p style={{ marginBottom: '1.5rem' }}>Pre-engineered metal building kits can cost significantly less than custom stick-built pole barns. Whitestar Metal Buildings ships kits nationwide with 4–6 week lead times, including engineering. <strong>Plus, receive a $500 credit toward your building purchase!</strong></p>
             <div>
               <a href="https://go.polebarnfinder.com/whitestar" target="_blank" rel="nofollow sponsored" className="btn-primary">
-                Get a Free Metal Building Quote →
+                Get a Free Quote & Claim $500 Credit →
               </a>
             </div>
           </div>
