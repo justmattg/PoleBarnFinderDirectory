@@ -96,14 +96,14 @@ export default function FloorPlansPage() {
               <span className="btn-primary" style={{width: '100%'}}>Browse Plans →</span>
             </a>
 
-            <a href="https://advancedhouseplans.com" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-1">
+            <a href="https://advancedhouseplans.com/?a=69c572f66add0" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-1">
               <div className="card-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-10"></path><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path></svg></div>
               <div className="card-title" style={{fontWeight: "bold", fontSize: "1.25rem", marginBottom: "0.5rem"}}>Agricultural & Storage</div>
               <p className="card-text">Hay barns, equipment storage, livestock shelters.</p>
               <span className="btn-primary" style={{width: '100%'}}>Browse Plans →</span>
             </a>
 
-            <a href="https://advancedhouseplans.com" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-2">
+            <a href="https://advancedhouseplans.com/?a=69c572f66add0" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-2">
               <div className="card-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg></div>
               <div className="card-title" style={{fontWeight: "bold", fontSize: "1.25rem", marginBottom: "0.5rem"}}>Commercial & Industrial</div>
               <p className="card-text">Warehouses, retail, multi-use buildings.</p>
@@ -169,7 +169,7 @@ export default function FloorPlansPage() {
                 </tr>
                 <tr>
                   <td><strong>Link</strong></td>
-                  <td><a href="https://advancedhouseplans.com" target="_blank" rel="noopener sponsored" className="btn-primary" style={{padding: '0.5rem 1rem', fontSize: '0.9rem'}}>Browse Plans →</a></td>
+                  <td><a href="https://advancedhouseplans.com/?a=69c572f66add0" target="_blank" rel="noopener sponsored" className="btn-primary" style={{padding: '0.5rem 1rem', fontSize: '0.9rem'}}>Browse Plans →</a></td>
                   <td><a href="https://mybarndominiumplans.com" target="_blank" rel="noopener sponsored" className="btn btn-secondary" style={{padding: '0.5rem 1rem', fontSize: '0.9rem'}}>Browse Plans →</a></td>
                   <td><a href="https://barndominiumplans.com" target="_blank" rel="noopener sponsored" className="btn btn-secondary" style={{padding: '0.5rem 1rem', fontSize: '0.9rem'}}>Browse Plans →</a></td>
                 </tr>
