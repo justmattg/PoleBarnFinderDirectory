@@ -1,20 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Script from 'next/script';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import ReadNextCards from '@/app/components/ReadNextCards';
 
 export const metadata: Metadata = {
-  title: 'How Much Does a Pole Barn Cost in 2026? | Pole Barn Directory',
-  description: 'Pole barn costs range from $15,000 to $180,000. See 2026 pricing by size, build type, and state. Shell-only vs turnkey comparison included.',
+  title: 'Pole Barn Cost Guide 2026: Prices by Size, State and Type',
+  description: 'Get 2026 pole barn cost estimates by size and state. Compare prices for 30x40, 40x60, 50x100 and more, plus regional rates and build factors.',
   alternates: {
     canonical: 'https://polebarndirectory.com/cost-guide',
   },
   openGraph: {
-    type: 'website',
+    type: 'article',
     siteName: 'Pole Barn Directory',
-    title: 'How Much Does a Pole Barn Cost in 2026? | Pole Barn Directory',
-    description: 'Pole barn costs range from $15,000 to $180,000. See 2026 pricing by size, build type, and state. Shell-only vs turnkey comparison included.',
+    title: 'Pole Barn Cost Guide 2026: Prices by Size, State and Type',
+    description: 'Get 2026 pole barn cost estimates by size and state. Compare prices for 30x40, 40x60, 50x100 and more, plus regional rates and build factors.',
     url: 'https://polebarndirectory.com/cost-guide',
     images: [{
       url: 'https://polebarndirectory.com/og-image.jpg',
@@ -24,55 +23,89 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How Much Does a Pole Barn Cost in 2026? | Pole Barn Directory',
-    description: 'Pole barn costs range from $15,000 to $180,000. See 2026 pricing by size, build type, and state. Shell-only vs turnkey comparison included.',
+    title: 'Pole Barn Cost Guide 2026: Prices by Size, State and Type',
+    description: 'Get 2026 pole barn cost estimates by size and state. Compare prices for 30x40, 40x60, 50x100 and more, plus regional rates and build factors.',
     images: ['https://polebarndirectory.com/og-image.jpg'],
   },
 };
 
 export default function CostGuidePage() {
+  const faqItems: { q: string; a: string }[] = [
+    {
+      q: 'How much does a 30x40 pole barn cost in 2026?',
+      a: 'A 30x40 pole barn (1,200 sq ft) typically costs $18,000–$40,000 for a basic shell build and $50,000–$135,000 for a fully finished build in 2026. Your final number depends on region, foundation type, insulation level, and door package. Shell prices assume posts, trusses, roof, and siding only.',
+    },
+    {
+      q: 'How much does a 40x60 pole barn cost in 2026?',
+      a: 'A 40x60 pole barn (2,400 sq ft) generally runs $36,000–$85,000 shell-only and $100,000–$260,000 finished in 2026. Expect to pay more in coastal, seismic, or heavy-snow regions. Insulated overhead doors, concrete flatwork, and electrical rough-in are the biggest variables at this size.',
+    },
+    {
+      q: 'What is the cheapest size pole barn to build?',
+      a: 'Standard stock sizes like 24x30 (720 sq ft) are the cheapest absolute cost, often starting around $12,000 for a basic shell. On a per-square-foot basis, smaller builds are actually more expensive — a 24x30 shell can run $18–$25 per sq ft, while a 40x60 shell runs closer to $15–$20 per sq ft.',
+    },
+    {
+      q: 'How much does it cost to build a pole barn per square foot?',
+      a: 'Pole barn cost per square foot generally ranges from $15–$40 for a basic shell and $65–$200 for a fully finished build in 2026. Smaller footprints cost more per sq ft. Finished builds with insulation, electrical, plumbing, and interior finishes sit at the high end of the range.',
+    },
+    {
+      q: 'Is it cheaper to build a pole barn or a traditional barn?',
+      a: 'A pole barn is typically 20–30% cheaper than a traditional stick-framed barn of the same size. Post-frame construction uses fewer materials, skips a full concrete footing, and goes up faster, which cuts labor costs. A traditional barn with a full foundation and stud-wall framing costs more per square foot.',
+    },
+    {
+      q: 'How long does it take to build a pole barn?',
+      a: 'A basic pole barn shell typically takes 1–3 weeks to erect once the foundation is prepped. Full turnkey builds with concrete, insulation, electrical, and interior finishing run 2–4 months start to finish. Permit timelines, weather, and material lead times can extend schedules by several weeks.',
+    },
+    {
+      q: 'Do I need a permit to build a pole barn?',
+      a: 'Most counties require a building permit for any pole barn over 120–200 sq ft, though rules vary widely. Permit fees generally run $150–$2,500 and are often 0.5–2% of total construction cost. Skipping a permit can void insurance, block resale, and trigger demolition orders if the structure is discovered.',
+    },
+    {
+      q: 'How much does a finished pole barn cost vs an unfinished one?',
+      a: 'Finished pole barns typically cost 2x to 5x more than shell-only builds. A $20,000 shell can become a $70,000–$100,000 finished building once you add insulation, electrical, plumbing, concrete flatwork, overhead doors, and interior finishing. The finish level drives the gap far more than the shell size does.',
+    },
+    {
+      q: 'What is the average cost of a pole barn in Michigan?',
+      a: 'A pole barn in Michigan generally costs $16–$40 per sq ft for a basic shell and $70–$195 per sq ft finished. Snow-load engineering adds modestly to truss packages, but Michigan has a deep post-frame builder network, including strong Amish crews, that keeps labor pricing competitive.',
+    },
+    {
+      q: 'What is the average cost of a pole barn in Wisconsin?',
+      a: 'A pole barn in Wisconsin typically runs $17–$40 per sq ft basic and $72–$195 per sq ft finished. Heavy snow-load requirements push truss engineering up by roughly $2,000–$4,000 versus a southern equivalent, but the established post-frame industry keeps labor rates reasonable statewide.',
+    },
+    {
+      q: 'Does a concrete floor add a lot to pole barn cost?',
+      a: 'A concrete slab typically adds $4–$12 per sq ft installed. On a 40x60 (2,400 sq ft) build, that is roughly $9,600–$28,800 for flatwork alone. Thickness, reinforcement, and site grading drive the range. A standard 4-inch residential slab sits near the low end; a 6-inch reinforced shop slab sits near the high end.',
+    },
+    {
+      q: 'How much does insulation add to a pole barn build?',
+      a: 'Insulation typically adds $0.80–$2.90 per sq ft depending on system. Fiberglass batts run $0.80–$2.60 per sq ft, blown-in runs $0.90–$2.40 per sq ft, and closed-cell spray foam runs $1.15–$2.90 per board foot installed. Spray foam costs more upfront but also acts as a vapor barrier, which matters for climate-controlled builds.',
+    },
+  ];
+
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Article",
         "@id": "https://polebarndirectory.com/cost-guide/#article",
-        "headline": "How Much Does a Pole Barn Cost in 2026?",
-        "description": "Comprehensive pole barn pricing guide covering shell-only vs turnkey costs, state-by-state modifiers, and kit vs custom build comparisons.",
+        "headline": "Pole Barn Cost Guide 2026: Prices by Size, State and Type",
+        "description": "2026 pole barn cost estimates by size and by state, plus the cost factors and finish-level trade-offs that drive final pricing.",
         "datePublished": "2026-03-13",
-        "dateModified": "2026-03-13",
+        "dateModified": "2026-04-16",
         "author": { "@id": "https://polebarndirectory.com/#organization" },
         "publisher": { "@id": "https://polebarndirectory.com/#organization" },
-        "mainEntityOfPage": "https://polebarndirectory.com/cost-guide"
+        "mainEntityOfPage": "https://polebarndirectory.com/cost-guide",
+        "image": "https://polebarndirectory.com/og-image.jpg"
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How much does a 30x40 pole barn cost?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A 30x40 pole barn (1,200 sq ft) costs between $15,000 and $25,000 for a shell-only build, or $30,000 to $50,000 for a turnkey build with insulation, electrical, and concrete flatwork."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the difference between shell-only and turnkey pole barn pricing?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Shell-only includes the structural frame, roof, and exterior siding — essentially a weather-tight shell. Turnkey includes everything needed to use the building: insulation, electrical, plumbing, concrete floors, overhead doors, and interior finishing. Turnkey typically costs 2x to 2.5x more than shell-only."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is a pole barn kit cheaper than a custom build?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Pole barn kits start at around $699 for plans and can save 10-20% on materials, but you still need to hire labor for assembly, pour concrete, and handle permits. A custom builder handles everything but charges a premium for project management. Total cost difference is often smaller than the kit price suggests."
-            }
+        "mainEntity": faqItems.map(item => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
           }
-        ]
+        }))
       },
       {
         "@type": "BreadcrumbList",
@@ -84,19 +117,77 @@ export default function CostGuidePage() {
     ]
   };
 
+  // Full 50-state cost estimates for 2026. Ranges are derived from national
+  // baseline ($15–$40 basic, $65–$200 finished per sq ft) adjusted for regional
+  // labor markets, snow/wind/seismic code requirements, and builder density.
+  // All figures are estimates. AK and HI are marked {VERIFY_STATE_DATA} because
+  // freight and remote logistics make per-sq-ft ranges unreliable without
+  // site-specific quoting.
+  const stateRows: { state: string; basic: string; finished: string; notes: string }[] = [
+    { state: 'Alabama',       basic: '$14–$36',  finished: '$60–$170',  notes: 'Low labor rates; minimal snow/seismic requirements.' },
+    { state: 'Alaska',        basic: '{VERIFY_STATE_DATA}', finished: '{VERIFY_STATE_DATA}', notes: 'Freight and remote-site logistics dominate pricing; quote locally.' },
+    { state: 'Arizona',       basic: '$16–$40',  finished: '$70–$190',  notes: 'Metro premiums in Phoenix/Tucson; low snow, moderate wind.' },
+    { state: 'Arkansas',      basic: '$13–$34',  finished: '$58–$165',  notes: 'Among the lowest-cost states; light code requirements.' },
+    { state: 'California',    basic: '$25–$50',  finished: '$95–$250',  notes: 'Seismic engineering, high labor ($65–$85/hr), complex permitting.' },
+    { state: 'Colorado',      basic: '$18–$42',  finished: '$75–$195',  notes: 'Snow loads and Front Range labor premium add cost.' },
+    { state: 'Connecticut',   basic: '$20–$42',  finished: '$80–$200',  notes: 'NYC/Hartford labor premium; strict permitting.' },
+    { state: 'Delaware',      basic: '$18–$40',  finished: '$75–$195',  notes: 'Moderate coastal wind loads; small builder pool.' },
+    { state: 'Florida',       basic: '$20–$45',  finished: '$80–$210',  notes: 'Hurricane engineering adds $3,000–$8,000; Miami-Dade is top-tier.' },
+    { state: 'Georgia',       basic: '$14–$36',  finished: '$60–$170',  notes: 'Low labor rates; minimal snow/seismic requirements.' },
+    { state: 'Hawaii',        basic: '{VERIFY_STATE_DATA}', finished: '{VERIFY_STATE_DATA}', notes: 'Freight and import logistics dominate pricing; quote locally.' },
+    { state: 'Idaho',         basic: '$16–$40',  finished: '$70–$190',  notes: 'Snow loads add to truss pricing; moderate labor.' },
+    { state: 'Illinois',      basic: '$16–$40',  finished: '$70–$190',  notes: 'Chicago metro premium; downstate pricing closer to baseline.' },
+    { state: 'Indiana',       basic: '$14–$36',  finished: '$60–$170',  notes: 'One of the cheapest post-frame markets; strong builder density.' },
+    { state: 'Iowa',          basic: '$14–$36',  finished: '$60–$170',  notes: 'Deep post-frame tradition keeps pricing competitive.' },
+    { state: 'Kansas',        basic: '$14–$36',  finished: '$60–$170',  notes: 'Tornado-zone wind upgrades can add 3–5%.' },
+    { state: 'Kentucky',      basic: '$14–$36',  finished: '$60–$170',  notes: 'Low labor; moderate code complexity outside metros.' },
+    { state: 'Louisiana',     basic: '$16–$38',  finished: '$65–$180',  notes: 'Gulf hurricane zone adds wind premium; moderate labor.' },
+    { state: 'Maine',         basic: '$18–$40',  finished: '$75–$195',  notes: 'Heavy snow loads; short build season compresses scheduling.' },
+    { state: 'Maryland',      basic: '$19–$40',  finished: '$78–$195',  notes: 'Coastal counties add wind premium; DC-metro labor is higher.' },
+    { state: 'Massachusetts', basic: '$22–$45',  finished: '$85–$210',  notes: 'High labor, heavy snow loads, strict permitting.' },
+    { state: 'Michigan',      basic: '$16–$40',  finished: '$70–$195',  notes: 'Snow-load engineering; strong Amish builder network keeps labor competitive.' },
+    { state: 'Minnesota',     basic: '$18–$42',  finished: '$75–$200',  notes: 'Heaviest snow loads in Lower 48; truss packages cost $2,000–$5,000 more than Texas.' },
+    { state: 'Mississippi',   basic: '$13–$34',  finished: '$58–$165',  notes: 'Low labor; minimal code complexity.' },
+    { state: 'Missouri',      basic: '$14–$36',  finished: '$60–$170',  notes: 'Low labor outside Kansas City and St. Louis metros.' },
+    { state: 'Montana',       basic: '$17–$40',  finished: '$72–$190',  notes: 'Snow loads and long mobilization distances add cost.' },
+    { state: 'Nebraska',      basic: '$14–$36',  finished: '$60–$170',  notes: 'Low labor; moderate wind zone.' },
+    { state: 'Nevada',        basic: '$18–$42',  finished: '$75–$195',  notes: 'Las Vegas/Reno metro labor premium; seismic considerations.' },
+    { state: 'New Hampshire', basic: '$18–$40',  finished: '$75–$195',  notes: 'Heavy snow loads; short build season.' },
+    { state: 'New Jersey',    basic: '$22–$45',  finished: '$85–$210',  notes: 'High labor rates; strict permitting process.' },
+    { state: 'New Mexico',    basic: '$15–$38',  finished: '$65–$180',  notes: 'Moderate; low labor outside Albuquerque/Santa Fe.' },
+    { state: 'New York',      basic: '$22–$48',  finished: '$85–$220',  notes: 'Metro labor premium; upstate carries heavy snow loads.' },
+    { state: 'North Carolina',basic: '$15–$38',  finished: '$65–$180',  notes: 'Coastal counties add wind-zone premium of 5–10%.' },
+    { state: 'North Dakota',  basic: '$16–$40',  finished: '$70–$190',  notes: 'Heavy snow and wind loads; limited builder pool in some counties.' },
+    { state: 'Ohio',          basic: '$15–$38',  finished: '$65–$180',  notes: 'Moderate snow loads; strong builder pool.' },
+    { state: 'Oklahoma',      basic: '$13–$34',  finished: '$58–$165',  notes: 'Among the lowest-cost states; minimal engineering requirements.' },
+    { state: 'Oregon',        basic: '$20–$45',  finished: '$80–$205',  notes: 'High labor; seismic and wildfire code requirements.' },
+    { state: 'Pennsylvania',  basic: '$18–$40',  finished: '$75–$195',  notes: 'Moderate snow loads; strong Amish builder presence.' },
+    { state: 'Rhode Island',  basic: '$20–$42',  finished: '$82–$205',  notes: 'Coastal wind loads; small but experienced builder pool.' },
+    { state: 'South Carolina',basic: '$15–$38',  finished: '$65–$180',  notes: 'Coastal counties add wind premium; growing pole-barn market.' },
+    { state: 'South Dakota',  basic: '$15–$38',  finished: '$65–$180',  notes: 'Snow and wind loads; low labor rates.' },
+    { state: 'Tennessee',     basic: '$14–$36',  finished: '$60–$170',  notes: 'Low labor; minimal code complexity; fast-growing market.' },
+    { state: 'Texas',         basic: '$15–$38',  finished: '$65–$180',  notes: 'Baseline. Large builder pool; moderate material costs.' },
+    { state: 'Utah',          basic: '$17–$40',  finished: '$72–$190',  notes: 'Snow loads; Wasatch Front labor premium.' },
+    { state: 'Vermont',       basic: '$18–$42',  finished: '$78–$195',  notes: 'Heavy snow loads; limited builder pool in some counties.' },
+    { state: 'Virginia',      basic: '$16–$38',  finished: '$68–$185',  notes: 'Coastal Virginia adds wind premium; NoVa labor is higher.' },
+    { state: 'Washington',    basic: '$22–$48',  finished: '$85–$220',  notes: 'High labor; seismic and coastal code requirements.' },
+    { state: 'West Virginia', basic: '$15–$38',  finished: '$65–$180',  notes: 'Lower labor rates; mountain terrain can add site-prep cost.' },
+    { state: 'Wisconsin',     basic: '$17–$40',  finished: '$72–$195',  notes: 'Heavy snow-load engineering; competitive labor from established post-frame industry.' },
+    { state: 'Wyoming',       basic: '$16–$40',  finished: '$70–$190',  notes: 'High wind zone; small labor pool can stretch timelines.' },
+  ];
+
   return (
     <>
-      <Script
-        id="schema-markup"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
       <Breadcrumbs currentPage="Cost Guide 2026" />
       <header className="page-header hero-pattern">
         <div className="container">
-          <h1 className="animate-fade-up">Pole Barn Cost Guide (2026)</h1>
+          <h1 className="animate-fade-up">Pole Barn Cost Guide 2026</h1>
           <p className="animate-fade-up delay-1">
-            The average pole barn costs between $15,000 and $120,000 depending on size, use, and location. Here&apos;s exactly how to estimate yours.
+            2026 pole barn prices by size, by state, and by finish level — plus the cost factors that move the final number.
           </p>
         </div>
       </header>
@@ -104,115 +195,105 @@ export default function CostGuidePage() {
       <section className="section">
         <div className="container content-with-sidebar">
           <article className="content-wrapper">
-          <h2>Cost by Size (National Averages)</h2>
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>Size</th>
-                <th>Shell Only</th>
-                <th>Turnkey</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>24×30 (720 sq ft)</td>
-                <td>$10,000–$18,000</td>
-                <td>$22,000–$35,000</td>
-              </tr>
-              <tr>
-                <td>30×40 (1,200 sq ft)</td>
-                <td>$15,000–$25,000</td>
-                <td>$30,000–$50,000</td>
-              </tr>
-              <tr>
-                <td>40×60 (2,400 sq ft)</td>
-                <td>$25,000–$42,000</td>
-                <td>$55,000–$90,000</td>
-              </tr>
-              <tr>
-                <td>40×80 (3,200 sq ft)</td>
-                <td>$32,000–$55,000</td>
-                <td>$70,000–$120,000</td>
-              </tr>
-              <tr>
-                <td>60×100 (6,000 sq ft)</td>
-                <td>$50,000–$85,000</td>
-                <td>$100,000–$180,000</td>
-              </tr>
-            </tbody>
-          </table>
 
-          <h2>8 Core Cost Factors</h2>
-          <h3>Foundation Type</h3>
           <p>
-            Your foundation choice sets the tone for the whole budget. A concrete slab runs $4–$12 per square foot installed, with a 4-inch residential slab on the low end and a 6-inch heavy-duty slab with reinforcement on the high end. A gravel pad usually costs $2,000–$4,000 total for a standard pole barn footprint, and per-square-foot costs range from $1.25–$10 depending on pad size. Smaller pads cost more per square foot, while large pads 1,000+ sq ft usually land in the $2–$5 range.
-          </p>
-          <p>
-            If you are building a workshop or barndominium, the slab is not optional. You need a hard, stable finished floor that can handle interior framing, plumbing, and daily use. Gravel works well for agricultural storage where you are parking equipment or storing hay. Concrete piers at $150–$300 each are usually the cheapest route for a basic pole barn on well-drained soil, but they are not the answer for every use case.
+            A pole barn costs an average of <strong>$15 to $40 per square foot for a basic shell build</strong> and <strong>$65 to $200 per square foot for a fully finished build</strong> in 2026. A common 30x40 comes in around $18,000–$40,000 shell-only and $50,000–$135,000 finished, while a mid-size 40x60 lands near $36,000–$85,000 shell-only and $100,000–$260,000 finished. These ranges reflect current material and labor pricing and assume a standard post-frame structure on a prepared site. Your final number is driven by three things: the size of the building, the state (and sometimes the county) you are building in, and how far past a weather-tight shell you take the finish. This guide covers size-specific costs for nine common footprints, state-by-state pricing across all 50 states, and a detailed breakdown of every line item that moves the bottom line.
           </p>
 
-          <h3>Steel Gauge and Roofing Material</h3>
+          <h2>Average Pole Barn Cost in 2026</h2>
           <p>
-            The panel package is one place where cheap gets expensive later. You will usually be choosing between 26-gauge and 29-gauge steel panels. The 29-gauge saves money upfront, but it dents easier and tends to deteriorate within 10 years. If you expect the building to last 20+ years, 26-gauge is the industry standard for a reason. It holds up better to weather, handling, and the normal abuse a working building sees over time.
+            The 2026 national average for a basic pole barn shell is <strong>$15 to $40 per square foot</strong>, with most standard-size builds landing between <strong>$15,000 and $85,000</strong>. A fully finished pole barn — with insulation, electrical, plumbing, concrete flatwork, overhead doors, and interior finishing — generally runs <strong>$65 to $200+ per square foot</strong>, or roughly <strong>$45,000 to $260,000</strong> for a common mid-size footprint. Barndominium-grade finishes, custom doors, or heavy engineering requirements can push finished cost above $250 per square foot.
           </p>
+          <div style={{ margin: '2rem 0', padding: '2rem', background: 'var(--bg-section-alt)', borderRadius: 'var(--border-radius-lg)', border: '1px solid var(--border-warm)' }}>
+            <strong style={{ display: 'block', marginBottom: '0.5rem', fontSize: '1.1rem' }}>Quick answer</strong>
+            <p style={{ margin: 0 }}>
+              In 2026, expect <strong>$15–$40 per sq ft</strong> for a basic shell and <strong>$65–$200 per sq ft</strong> for a finished build. The three biggest cost drivers are <strong>size</strong>, <strong>region</strong>, and <strong>finish level</strong>. Use the size and state tables below to narrow your range, then read the cost-factor section to see exactly what a turnkey number includes.
+            </p>
+          </div>
           <p>
-            Roof profile matters too. Standing seam roofing costs roughly 2x exposed fastener panels, but it eliminates leak points and commonly lasts 40–50 years. If your site is coastal or carries constant humidity, Galvalume coating outperforms standard G90 galvanized because the aluminum-zinc alloy resists corrosion better. One more thing builders know and buyers forget: steel pricing moves around. Get quotes within 30 days of your build date, not months in advance.
-          </p>
-
-          <h3>Insulation Package</h3>
-          <p>
-            Insulation is not one line item. It is a full system, and the wrong system will make the building sweat like a cold drink in August. Closed-cell spray foam costs $1.15–$2.90 per board foot installed. Blown-in insulation runs $0.90–$2.40 per square foot. Fiberglass batts run $0.80–$2.60 per square foot for standard unfaced batts, and up to $4.00 per square foot for premium vinyl-backed systems with metal liner panels.
-          </p>
-          <p>
-            For a barndominium or climate-controlled workshop, spray foam is non-negotiable because it air-seals, insulates, and acts as a vapor barrier at the same time. Batts are adequate for unheated storage where temperature swings are not a concern. Pay attention to vapor barrier placement. It always belongs on the warm side of the wall assembly. Get that wrong and you trap condensation inside the cavity, which starts rotting your framing from the inside out.
+            These figures reflect 2026 material and labor costs. Post-frame material pricing has stabilized relative to the 2021–2023 volatility, but steel and concrete remain 20–35% higher than pre-2020 baselines. Labor rates have climbed steadily across every region. Permit and engineering fees have also increased in most jurisdictions. Treat any number in this guide as an estimate: real-world site conditions, code requirements, and finish choices shift final pricing by 15–25% in either direction.
           </p>
 
-          <h3>Overhead Door Count and Size</h3>
+          <h2>Pole Barn Cost by Size</h2>
           <p>
-            Overhead doors can quietly blow up a budget faster than most buyers expect. Standard commercial sectional doors run $1,200–$4,000 per unit installed. Add insulation and the price climbs another 30–50%. On a 40×60 shop with three insulated overhead doors, you can easily spend $5,000–$12,000+ on doors alone. If the building will be heated, specify insulated doors with at least R-12. Anything less leaves you with a giant heat leak every time winter shows up.
-          </p>
-          <p>
-            This line item gets underestimated constantly because people price the shell and forget the openings. A big door is not just a door. It changes framing, hardware, tracks, operators, and often installation labor. On real jobs, overhead doors are usually the second-largest variable cost after the foundation. If your quote looks surprisingly low, check whether the door package is actually included and what insulation level you are getting.
+            Size is the first lever that moves cost. Larger buildings cost more in absolute dollars but almost always cost less <em>per square foot</em>, because fixed costs — permits, engineering, mobilization, crew setup — get spread across more area. Small buildings are the opposite: a 24x30 often runs $18–$25 per sq ft shell-only, while a 40x60 runs closer to $15–$20 per sq ft. The sections below cover nine common footprints with total cost ranges for basic and finished builds, plus the primary cost factors specific to each size. For matching layouts, see our <Link href="/floor-plans">floor plan options for each size</Link>.
           </p>
 
-          <h3>Electrical and Plumbing</h3>
+          <h3>24x30 Pole Barn Cost (720 sq ft)</h3>
           <p>
-            Utility work is where vague quotes turn into ugly change orders. Electrical rough-in can run $2,800–$10,000+ for a basic 200A panel with lighting and outlets, $5,000–$15,000 for a fully wired workshop with 220V circuits, and up to $30,000 for a complete barndominium with underground service trenching. Plumbing rough-in typically runs $4–$6 per square foot for new construction, and adding a basic bathroom usually costs $4,000–$12,000.
+            A 24x30 pole barn is the most common small-hobby and compact-garage footprint. Basic shell builds typically run <strong>$12,000–$25,000</strong>. A finished 24x30 with insulation, electrical, a concrete slab, and one overhead door generally runs <strong>$35,000–$95,000</strong> depending on finish level. Common uses include a two-car garage with workshop bench space, a small hobby shop, or a backyard storage building for yard equipment and ATVs.
           </p>
           <p>
-            Some builders roll electrical into turnkey pricing and others leave it completely out. That single gap is the #1 source of &quot;my pole barn cost way more than quoted&quot; complaints. Before you sign anything, get the electrical scope in writing. You want to see panel size, outlet count, lighting allowances, trenching, and any 220V service spelled out. Plumbing needs the same treatment, especially if the building will include a bathroom, utility sink, or future apartment space.
-          </p>
-
-          <h3>Regional Labor Rates</h3>
-          <p>
-            Labor is never a throwaway number, and it moves more than most online cost calculators admit. On a basic shell build, labor usually accounts for 25–35% of total cost. On a turnkey project with concrete flatwork and interior finishing, labor often climbs to 40–60%. Gulf Coast and Southeast framing crews generally run $35–$55/hr. Midwest labor typically lands at $40–$65/hr. Northeast and West Coast crews are commonly $55–$85/hr, especially where skilled post-frame labor is tight.
-          </p>
-          <p>
-            Rural pricing can fool you. You might assume a remote site means cheaper labor, but that is not how this trade works. If there are only a few qualified post-frame crews in your area, you get longer lead times and less pricing pressure. If a crew drives 90 minutes each way to reach your property, they build fuel, time, and mobilization cost into the bid. Remote does not automatically mean discounted.
+            At 720 sq ft, this size carries the highest per-square-foot penalty of any footprint on this page. Fixed costs — permit fees, mobilization, crane setup, equipment delivery — get amortized across less area. That is why a small shell can run $18–$25 per sq ft while a 40x60 shell runs $15–$20. The main variables are door count (one vs. two overhead doors), slab thickness (4-inch vs. 6-inch), and whether the building needs any insulation or electrical rough-in. Keep it to a single standard overhead door, one walk-in door, and a simple gravel or 4-inch slab to stay at the low end.
           </p>
 
-          <h3>Permits and Engineering</h3>
+          <h3>30x40 Pole Barn Cost (1,200 sq ft)</h3>
           <p>
-            Permits and engineering are the parts buyers like to treat as paperwork until the county says otherwise. Building permits usually run $150 to $2,500, which is roughly 0.50–2.00% of total construction cost. In areas with stricter wind, snow, or seismic requirements, structural engineering adds another $1,200–$4,800. That covers the math behind your trusses, foundations, connections, and load paths. Without it, you are guessing on the most expensive structure on your property.
+            A 30x40 is the single most-searched pole barn size and the classic mid-size garage, shop, or combo hobby building. Basic shell builds run <strong>$18,000–$40,000</strong>. Finished builds with insulation, electrical, a concrete slab, and two overhead doors generally run <strong>$50,000–$135,000</strong>. Common uses include a three-bay garage, a small workshop with room for a workbench and compressor, or a feed and tack storage building.
           </p>
           <p>
-            If you are upgrading a shell to meet full residential building codes, expect emergency egress, attic ventilation, and foundation anchoring requirements to add 10–15% to shell cost, especially in high-wind coastal regions. Skipping permits looks cheaper only until you try to sell, file an insurance claim, or explain yourself to a county inspector. The small money you save early can become a very large bill later.
-          </p>
-
-          <h3>The Shell-Only vs. Turnkey Trap</h3>
-          <p>
-            This is where most cost guides go sideways. Shell-only pricing usually runs $15–$40 per square foot and generally covers posts, trusses, roof, siding, and sometimes a basic entry door. No insulation, no electrical, no plumbing, no concrete floor, and no overhead doors. Turnkey pricing for a fully finished, move-in ready building runs $65–$200+ per square foot depending on finishes. That spread is not cosmetic. It is the difference between a weather-tight shell and a usable building.
-          </p>
-          <p>
-            A lot of websites make it sound like turnkey pricing is only 2x to 2.5x shell pricing. In practice, it is a 2x to 5x multiplier. That is why so many real-world projects blow past the number buyers saw online. Most &quot;pole barn cost&quot; numbers floating around are shell-only prices. The first question you should ask any builder is simple and direct: What exactly is and is not included in this number?
+            At 1,200 sq ft the per-sq-ft number drops meaningfully — shell pricing often sits around $15–$22. The primary variables are the door package (two insulated overhead doors can add $4,000–$8,000 alone), slab thickness, and the insulation system if the building will be heated. Electrical rough-in at this size typically runs $3,500–$7,500 for a 100A panel with lighting and outlets. If you want a climate-controlled shop, plan for spray-foam insulation rather than batts to avoid condensation issues over time.
           </p>
 
-          <h2>State-by-State Cost Modifiers</h2>
+          <h3>30x50 Pole Barn Cost (1,500 sq ft)</h3>
           <p>
-            Pole barn costs swing from state to state because the building code is reacting to local weather and soil, not because a contractor feels like charging more. Snow load is the first big driver. In heavy-snow states, the truss package has to carry more live load, which pushes engineering and materials up by $2,000–$5,000 compared with a similar Texas building. Wind zone is the next one. Hurricane and high-wind regions need more bracing, thicker gauge steel, stronger uplift protection, and engineered connections that keep the structure tied together under pressure. Those details do not show well in a glossy brochure, but they show up fast in the price.
+            A 30x50 adds 300 sq ft to the classic 30x40 and unlocks real workshop layouts. Basic shell builds run <strong>$22,000–$50,000</strong>. Finished builds with insulation, electrical, a concrete slab, and two overhead doors generally run <strong>$65,000–$180,000</strong>. Common uses include a serious woodworking or metal shop, a livestock barn with tack and feed storage, or a combination garage-plus-workshop with a walled-off bay.
           </p>
           <p>
-            Frost depth and labor market finish the job. In colder states, deeper frost lines mean deeper post embedment or a more expensive foundation system, and both add labor and material cost before the shell even starts going up. Labor is just as uneven. Some states have deep post-frame builder benches and competitive pricing, while others have fewer qualified crews, higher prevailing wages, or both. A strong local builder market can keep prices in check even where engineering loads are higher. A thin labor market can make a simple building expensive, especially if your crew is traveling in from another county or metro area.
+            Per-square-foot cost at 30x50 lands in the same range as a 30x40, usually $14–$20 shell-only. The extra depth gives you room for an interior wall without cramping the primary bay, which is why this footprint is popular with hobbyists. The main cost drivers are still overhead door count, slab depth, and insulation. Adding a half-bath or utility sink pushes the finished price up by $4,000–$12,000 for basic plumbing rough-in.
+          </p>
+
+          <h3>32x40 Pole Barn Cost (1,280 sq ft)</h3>
+          <p>
+            A 32x40 is a slightly wider alternative to a 30x40 and is popular where vehicle bays need a little more shoulder room. Basic shell builds run <strong>$19,000–$42,000</strong>. Finished builds with insulation, electrical, a concrete slab, and two overhead doors generally run <strong>$55,000–$150,000</strong>. Common uses include a garage for full-size pickups and SUVs, a workshop with enough width for a boat or RV plus a work bench, or a small equestrian tack and grooming building.
+          </p>
+          <p>
+            The 2-foot width bump adds roughly 7% in material and labor over a 30x40, so expect similar per-sq-ft pricing. Cost factors mirror the 30x40: door package, slab specification, and insulation drive the range. If the building will store a boat or RV, specify at least a 10x10 overhead door and plan for 12-foot sidewalls to clear the vehicle without binding.
+          </p>
+
+          <h3>40x60 Pole Barn Cost (2,400 sq ft)</h3>
+          <p>
+            A 40x60 is the classic working pole barn — large enough for real equipment storage, full workshop layouts, or a barndominium footprint. Basic shell builds run <strong>$36,000–$85,000</strong>. Finished builds with insulation, electrical, plumbing, concrete flatwork, and an insulated door package generally run <strong>$100,000–$260,000</strong>. Common uses include a multi-bay equipment barn, a full-size workshop with room for a car lift, a small barndominium layout, or a farm shop with a parts room.
+          </p>
+          <p>
+            Per-sq-ft pricing improves at this size, typically $15–$20 shell-only. The biggest cost variables are the door package (three insulated overhead doors can run $7,500–$15,000), slab specification (a 6-inch reinforced shop slab costs 30–40% more than a 4-inch residential slab), and electrical scope for heavy tools and 220V circuits. This is also the size where a poorly-spec&apos;d insulation system will show up as condensation inside the first winter, so invest in closed-cell spray foam if the building will be heated.
+          </p>
+
+          <h3>50x60 Pole Barn Cost (3,000 sq ft)</h3>
+          <p>
+            A 50x60 gives you real commercial-scale interior space without crossing into engineered-steel territory. Basic shell builds run <strong>$45,000–$105,000</strong>. Finished builds with insulation, electrical, plumbing, concrete flatwork, and a multi-door package generally run <strong>$125,000–$320,000</strong>. Common uses include a commercial workshop, a multi-horse equestrian facility, a small warehouse for a home business, or a barndominium with attached shop.
+          </p>
+          <p>
+            At 50x60 the truss package starts to cost meaningfully more per linear foot because longer clear spans require heavier engineering. Expect the truss line item to climb 15–25% over a 40x60. Labor also increases because the crew spends more days on site. The main cost drivers are truss span, door count (commercial sites often specify three to four overhead doors), and electrical scope. A 50x60 with full commercial wiring, a 200A panel, and multiple 220V circuits can run $8,000–$18,000 in electrical alone.
+          </p>
+
+          <h3>50x100 Pole Barn Cost (5,000 sq ft)</h3>
+          <p>
+            A 50x100 is a large commercial-scale pole barn typically used for agricultural storage, small warehouses, or indoor arenas. Basic shell builds run <strong>$75,000–$175,000</strong>. Finished builds generally run <strong>$200,000–$500,000</strong>, with most commercial projects landing in the middle. Common uses include hay and equipment storage, indoor riding arenas, small manufacturing spaces, and light commercial warehouses.
+          </p>
+          <p>
+            This size unlocks meaningful per-sq-ft savings — shell pricing often lands at $14–$18 — but engineering and permit complexity increase. Truss spans at 50 feet require heavier-duty designs, and county permits at this scale often trigger commercial inspections rather than residential ones. Site preparation also matters more: a 5,000 sq ft footprint requires serious grading and drainage work. Expect $8,000–$25,000 for site prep before the shell goes up.
+          </p>
+
+          <h3>60x80 Pole Barn Cost (4,800 sq ft)</h3>
+          <p>
+            A 60x80 is a wide-span commercial pole barn used for equipment storage, indoor work areas, and mid-size ag operations. Basic shell builds run <strong>$72,000–$165,000</strong>. Finished builds generally run <strong>$190,000–$475,000</strong>. Common uses include combine and tractor storage, small commercial workshops, county shop buildings, and indoor livestock operations.
+          </p>
+          <p>
+            The 60-foot clear span is where truss engineering starts to carry serious weight. Expect truss packages 20–30% more expensive per linear foot than a 40- or 50-foot span. Column spacing and foundation embedment also get stricter. The main cost drivers are span engineering, overhead door count (commercial ag buildings often need one or two oversized 14x14 or 16x14 doors), and site prep. Sidewall height matters too — jumping from 12 to 16 feet adds 15–25% to wall materials and labor.
+          </p>
+
+          <h3>80x120 Pole Barn Cost (9,600 sq ft)</h3>
+          <p>
+            An 80x120 is a large commercial or agricultural building used for machine sheds, indoor arenas, commercial warehouses, and multi-stall livestock facilities. Basic shell builds run <strong>$145,000–$325,000</strong>. Finished builds generally run <strong>$360,000–$900,000</strong>. Common uses include indoor riding arenas, large equipment sheds, commercial warehouses, and event venues.
+          </p>
+          <p>
+            At this size you are firmly in commercial territory. Engineering is required in most jurisdictions, and some counties require engineered stamped drawings regardless of wind or snow zone. Truss spans above 60 feet generally need steel or hybrid wood-steel designs that add $15,000–$50,000 to the shell. Labor timelines stretch to 6–12 weeks for shell-only and several months for finished builds. Site prep, drainage, and access can add another $20,000–$60,000 on a sloped or wooded parcel. At this scale, every bid should itemize engineering, permit, and mobilization separately.
+          </p>
+
+          <h2>Pole Barn Cost by State in 2026</h2>
+          <p>
+            State-level pricing varies by 30–40% across the country in 2026. Four forces drive regional cost variance: <strong>labor rates</strong>, <strong>material shipping costs</strong>, <strong>climate-driven engineering</strong> (snow, wind, and seismic loads), and <strong>permit complexity</strong>. A Minnesota pole barn carries heavier snow-load engineering than the same building in Texas. A Florida pole barn requires hurricane-rated connections that a Michigan build does not. California adds seismic engineering and some of the highest labor rates in the country. The table below covers per-sq-ft estimates for all 50 states. Alaska and Hawaii are marked <code>{'{VERIFY_STATE_DATA}'}</code> because freight and remote-site logistics dominate pricing and ranges are unreliable without site-specific quoting.
           </p>
 
           <div style={{ overflowX: 'auto' }}>
@@ -220,95 +301,186 @@ export default function CostGuidePage() {
               <thead>
                 <tr>
                   <th>State</th>
-                  <th>Cost Modifier</th>
+                  <th>Cost per Sq Ft (Basic)</th>
+                  <th>Cost per Sq Ft (Finished)</th>
                   <th>Notes</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Texas</td>
-                  <td>1.0x</td>
-                  <td>Baseline. Large builder pool, moderate material costs, minimal snow/seismic requirements.</td>
-                </tr>
-                <tr>
-                  <td>Ohio</td>
-                  <td>0.95x</td>
-                  <td>Slightly below average labor costs, moderate snow loads.</td>
-                </tr>
-                <tr>
-                  <td>Indiana</td>
-                  <td>0.90x</td>
-                  <td>One of the cheapest states for post-frame construction. Strong builder density, low labor costs. Permit fees typically $500–$1,500.</td>
-                </tr>
-                <tr>
-                  <td>Michigan</td>
-                  <td>1.05x</td>
-                  <td>Snow load engineering adds modest cost. Strong Amish builder network keeps labor competitive.</td>
-                </tr>
-                <tr>
-                  <td>Missouri</td>
-                  <td>0.92x</td>
-                  <td>Low labor, minimal code complexity outside Kansas City and St. Louis metro.</td>
-                </tr>
-                <tr>
-                  <td>North Carolina</td>
-                  <td>0.95x</td>
-                  <td>Moderate costs. Coastal counties add wind zone premiums of 5–10%.</td>
-                </tr>
-                <tr>
-                  <td>Georgia</td>
-                  <td>0.90x</td>
-                  <td>Low labor rates, minimal snow/seismic. Construction costs average $100–$150 per sq ft for finished barndominiums.</td>
-                </tr>
-                <tr>
-                  <td>Florida</td>
-                  <td>1.20x</td>
-                  <td>Hurricane wind zone engineering adds $3,000–$8,000. Miami-Dade county is the most expensive jurisdiction in the state.</td>
-                </tr>
-                <tr>
-                  <td>Pennsylvania</td>
-                  <td>1.05x</td>
-                  <td>Moderate snow loads, slightly above-average labor. Strong Amish builder presence.</td>
-                </tr>
-                <tr>
-                  <td>Wisconsin</td>
-                  <td>1.10x</td>
-                  <td>Heavy snow load engineering. Competitive labor from the state&apos;s established post-frame industry.</td>
-                </tr>
-                <tr>
-                  <td>Minnesota</td>
-                  <td>1.15x</td>
-                  <td>Heaviest snow loads in the lower 48. Truss packages cost $2,000–$5,000 more than Texas equivalent.</td>
-                </tr>
-                <tr>
-                  <td>Tennessee</td>
-                  <td>0.90x</td>
-                  <td>Low labor, minimal code complexity. Fast-growing pole barn market.</td>
-                </tr>
-                <tr>
-                  <td>Oklahoma</td>
-                  <td>0.85x</td>
-                  <td>Lowest-cost state on this list. Low labor, low material costs, minimal engineering requirements.</td>
-                </tr>
-                <tr>
-                  <td>Colorado</td>
-                  <td>1.10x</td>
-                  <td>Altitude and snow loads add engineering cost. Front Range labor rates are above the national average.</td>
-                </tr>
-                <tr>
-                  <td>California</td>
-                  <td>1.35x</td>
-                  <td>Seismic engineering, high labor rates ($65–$85/hr), complex permitting process. Most expensive state for pole barn construction.</td>
-                </tr>
+                {stateRows.map(row => (
+                  <tr key={row.state}>
+                    <td><strong>{row.state}</strong></td>
+                    <td>{row.basic}</td>
+                    <td>{row.finished}</td>
+                    <td>{row.notes}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
 
           <p>
-            These are statewide averages, not promises. Site-specific factors can move your real cost 10–20% in either direction. Distance from supplier hubs matters. Site accessibility matters even more, especially if a concrete truck cannot easily reach your property. County code requirements can shift quickly once local inspectors review your plans. In places like New England, site preparation alone, including clearing, septic, and well work, can cost $25,000–$40,000 before the building shell arrives.
+            These are statewide estimates. Site-specific factors can move your real cost 15–25% in either direction. Distance from supplier hubs matters. Site accessibility matters even more, especially if a concrete truck cannot easily reach your property. County code requirements shift quickly once local inspectors review your plans. In parts of the Northeast, site preparation alone — clearing, septic, and well work — can cost $25,000–$40,000 before the building shell arrives.
           </p>
 
-          <div style={{ marginTop: '3rem', marginBottom: '3rem', padding: '3rem', background: 'var(--color-stone)', borderRadius: 'var(--border-radius-lg)', border: '1px solid var(--color-border)' }}>
+          <h3>Pole Barn Cost in Wisconsin 2026</h3>
+          <p>
+            A pole barn in Wisconsin typically costs <strong>$17–$40 per sq ft basic</strong> and <strong>$72–$195 per sq ft finished</strong> in 2026. Heavy snow loads are the dominant regional cost driver. Wisconsin&apos;s snow-load requirements push truss engineering up by roughly $2,000–$4,000 compared with a Texas equivalent building, and frost-depth requirements for post embedment typically run 42 inches or deeper, which adds labor to site prep.
+          </p>
+          <p>
+            On the plus side, Wisconsin has one of the deepest post-frame builder markets in the country. Competition keeps labor pricing reasonable, and permit fees outside urban counties are generally modest at $200–$1,200. Dane, Milwaukee, and Waukesha counties run toward the higher end of permit costs and timelines. For heated shops or barndominiums, budget closed-cell spray foam rather than batts to avoid long-term condensation issues in the harsh winter-summer swing. Find Wisconsin pole barn builders at <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a>.
+          </p>
+
+          <h3>Pole Barn Cost in Michigan 2026</h3>
+          <p>
+            A pole barn in Michigan typically costs <strong>$16–$40 per sq ft basic</strong> and <strong>$70–$195 per sq ft finished</strong> in 2026. Snow-load engineering is the main regional premium, especially in the Upper Peninsula and the Grand Traverse region, where some counties require heavier truss designs than Lower Michigan. Frost-depth post embedment typically runs 42 inches across the state.
+          </p>
+          <p>
+            Michigan has an unusually strong Amish and Mennonite post-frame builder network across the Thumb, West Michigan, and parts of Northern Michigan. That competition keeps labor pricing competitive. Permit fees vary widely — rural counties often run $150–$600, while metro-Detroit townships can run $1,200–$2,500. Lake-effect snow regions occasionally trigger enhanced truss requirements that most buyers do not see online, so confirm snow-load spec with your builder in writing. Find Michigan pole barn builders at <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a>.
+          </p>
+
+          <h3>Pole Barn Cost in South Carolina 2026</h3>
+          <p>
+            A pole barn in South Carolina typically costs <strong>$15–$38 per sq ft basic</strong> and <strong>$65–$180 per sq ft finished</strong> in 2026. South Carolina has low baseline costs thanks to moderate labor rates and minimal snow-load requirements, but coastal counties — Horry, Charleston, Beaufort, Georgetown — add a wind-zone premium of 5–10% for engineered hurricane connections.
+          </p>
+          <p>
+            Inland counties run at the low end of the state&apos;s range, with permit fees commonly between $200 and $800. Coastal jurisdictions push permitting timelines longer and may require engineered stamped drawings for any enclosed structure above a modest size. Soil conditions in the Lowcountry can also force deeper post embedment or pier foundations on wet sites. Climate humidity makes vapor-barrier placement critical — a botched system causes sweating inside the shell. Find South Carolina pole barn builders at <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a>.
+          </p>
+
+          <h3>Pole Barn Cost in Florida 2026</h3>
+          <p>
+            A pole barn in Florida typically costs <strong>$20–$45 per sq ft basic</strong> and <strong>$80–$210 per sq ft finished</strong> in 2026. Hurricane wind zones are the dominant regional cost driver. Statewide wind requirements push engineered connections, heavier post embedment, and stronger uplift protection, which collectively add $3,000–$8,000 over a comparable Texas build.
+          </p>
+          <p>
+            Miami-Dade and Broward counties run the highest pricing in the state due to HVHZ (High Velocity Hurricane Zone) requirements, product-approval documentation, and stricter inspection processes. Panhandle and North Florida counties run closer to the state&apos;s low end. Permit fees range widely — rural inland counties often $500–$1,500, coastal metros $1,500–$4,000. Build season is long, but summer humidity and hurricane-season scheduling can compress timelines. Find Florida pole barn builders at <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a>.
+          </p>
+
+          <h3>Pole Barn Cost in Minnesota 2026</h3>
+          <p>
+            A pole barn in Minnesota typically costs <strong>$18–$42 per sq ft basic</strong> and <strong>$75–$200 per sq ft finished</strong> in 2026. Minnesota carries the heaviest snow-load requirements in the Lower 48, which adds the most engineering overhead of any state. Truss packages commonly cost $2,000–$5,000 more than a Texas equivalent, and column embedment depth typically runs 48–60 inches to clear frost.
+          </p>
+          <p>
+            Build seasons are short — most crews target April through October — which compresses scheduling and occasionally pushes permit timelines. Labor rates are moderate outside the Twin Cities metro, where they run above state average. Heated shops and barndominiums should specify spray foam or high-R batt systems with careful vapor barrier placement to handle Minnesota&apos;s aggressive temperature swings. Permit fees vary from rural ($300–$800) to metro ($1,000–$2,500). Find Minnesota pole barn builders at <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a>.
+          </p>
+
+          <h3>Pole Barn Cost in Ohio 2026</h3>
+          <p>
+            A pole barn in Ohio typically costs <strong>$15–$38 per sq ft basic</strong> and <strong>$65–$180 per sq ft finished</strong> in 2026. Ohio sits close to the national baseline on most cost drivers. Snow loads are moderate, labor rates are reasonable, and the state has one of the largest post-frame builder pools in the country.
+          </p>
+          <p>
+            Permit fees are generally modest ($200–$1,000 outside metros) and inspection processes are well-established. Rural counties and the Amish counties of eastern and central Ohio offer some of the most competitive pricing in the Midwest. Metro Cleveland, Columbus, and Cincinnati run toward the high end of labor rates. Lake-effect snow along Lake Erie can require enhanced truss specs in Cuyahoga, Lake, and Ashtabula counties. Find Ohio pole barn builders at <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a>.
+          </p>
+
+          <h3>Pole Barn Cost in Indiana 2026</h3>
+          <p>
+            A pole barn in Indiana typically costs <strong>$14–$36 per sq ft basic</strong> and <strong>$60–$170 per sq ft finished</strong> in 2026. Indiana is one of the cheapest states in the country for post-frame construction. Strong builder density, moderate labor rates, and minimal code complexity outside the Indianapolis metro keep pricing competitive.
+          </p>
+          <p>
+            Permit fees typically run $200–$1,200. Snow loads are moderate and wind requirements are standard across most of the state. Northern Indiana carries lake-effect snow considerations in a few counties. Rural Indiana — especially central and northern counties with strong Amish builder presence — consistently delivers some of the lowest per-sq-ft pricing in the Midwest. Confirm in writing that your builder is using 26-gauge (not 29-gauge) steel if you expect the building to last 20+ years. Find Indiana pole barn builders at <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a>.
+          </p>
+
+          <h3>Pole Barn Cost in Pennsylvania 2026</h3>
+          <p>
+            A pole barn in Pennsylvania typically costs <strong>$18–$40 per sq ft basic</strong> and <strong>$75–$195 per sq ft finished</strong> in 2026. Pennsylvania has moderate snow loads, slightly above-average labor rates, and one of the strongest Amish builder networks in the country, especially in Lancaster, Lebanon, and central PA counties.
+          </p>
+          <p>
+            Permit costs vary by township more than by county. Rural townships often charge $300–$900, while southeastern PA (Chester, Delaware, Montgomery counties) and the Pittsburgh metro can run $1,200–$2,500. Snow-load requirements get stricter in the Poconos and north-central PA. The Amish builder network is famous for competitive pricing and tight timelines, but lead times can stretch in peak season (April–October). Find Pennsylvania pole barn builders at <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a>.
+          </p>
+
+          <h2>What Affects Pole Barn Cost</h2>
+          <p>
+            Six line items move pole barn cost more than anything else: materials, labor, site preparation, permits, insulation and interior finishing, and the door-and-window package. Every section below covers realistic 2026 cost ranges and what to check before you sign a bid. When a quote looks noticeably cheaper than a competing bid, the difference is almost always hiding in one of these six categories.
+          </p>
+
+          <h3>Materials</h3>
+          <p>
+            The two biggest material decisions are the framing system and the panel package. Post-frame construction with treated wood posts is standard and usually the least expensive route. Steel-framed pole barns cost roughly 10–20% more in materials but offer longer span capacity and better fire performance. For roofing, you will generally choose between 26-gauge and 29-gauge steel panels. The 29-gauge saves money upfront — usually $1,500–$4,000 on a mid-size build — but it dents more easily and tends to deteriorate within a decade. 26-gauge is the industry standard for buildings expected to last 20+ years.
+          </p>
+          <p>
+            Roof profile matters almost as much as gauge. Standing seam roofing costs roughly 2x exposed fastener panels but eliminates leak points and commonly lasts 40–50 years. For siding, steel panels are by far the most common and typically run $3–$6 per sq ft installed. Wood siding costs $5–$12 per sq ft, requires more maintenance, and shows up mostly on barndominium-style builds. In coastal and humid environments, Galvalume coating outperforms standard G90 galvanized because the aluminum-zinc alloy resists corrosion better.
+          </p>
+
+          <h3>Labor</h3>
+          <p>
+            Labor typically accounts for 25–35% of basic shell cost and climbs to 40–60% on turnkey builds with concrete, insulation, and interior finishing. Regional labor rates vary widely. Gulf Coast and Southeast framing crews generally run $35–$55/hr. Midwest post-frame crews typically charge $40–$65/hr. Northeast and West Coast crews commonly run $55–$85/hr, with California, New York, and Seattle crews sitting at the top.
+          </p>
+          <p>
+            DIY labor can save 20–30% on a basic shell if you have the skills, equipment, and time. That typically means renting a telehandler or boom lift, having 2–3 helpers on site, and accepting a 4–8 week timeline instead of 1–3 weeks. DIY almost never makes sense for trusses over 40 feet, which require professional lifting equipment and experienced crews. Rural pricing can fool you — if there are only a few qualified post-frame crews in your area, you lose pricing pressure and gain longer lead times. Crews that drive 90 minutes each way also build fuel, time, and mobilization cost into the bid.
+          </p>
+
+          <h3>Site Preparation and Foundation</h3>
+          <p>
+            Site preparation is the line item most often left out of initial quotes. Basic grading and compaction for a level building pad typically runs $2,000–$8,000. A gravel pad for a standard pole barn footprint usually costs $2,000–$4,000 total; per-square-foot costs range from $1.25 to $10 depending on pad size, with large pads (1,000+ sq ft) landing in the $2–$5 range. Smaller pads cost more per sq ft because mobilization dominates.
+          </p>
+          <p>
+            A concrete slab runs $4–$12 per sq ft installed. A standard 4-inch residential slab sits at the low end; a 6-inch reinforced shop slab with rebar, thickened edges, and vapor barrier sits at the high end. On a 40x60 (2,400 sq ft) build, that is roughly $9,600–$28,800 for flatwork alone. Concrete piers — often the cheapest route for a storage-use pole barn on well-drained soil — run $150–$300 each. If the building is a workshop, barndominium, or any heated structure, the slab is not optional. You need a hard, stable finished floor that handles interior framing, plumbing, and daily use.
+          </p>
+
+          <h3>Permits and Inspections</h3>
+          <p>
+            Most counties require a building permit for any pole barn over 120–200 sq ft, though the threshold varies by jurisdiction. Permit fees generally run <strong>$150–$2,500</strong>, or roughly 0.5–2% of total construction cost. Urban and coastal counties sit at the high end; rural counties and states with light code enforcement sit at the low end. In high-wind, heavy-snow, or seismic regions, structural engineering adds another <strong>$1,200–$4,800</strong> for engineered truss plans, stamped foundation drawings, and load-path calculations.
+          </p>
+          <p>
+            Many states require permits for any enclosed structure regardless of size; others exempt agricultural buildings entirely. Coastal counties almost universally require wind-zone engineering. Mountain and snow-country counties often require snow-load-specific truss designs. Inspection requirements vary — some counties want a single final inspection, others want a footing, framing, and final inspection sequence. Skipping permits looks cheaper only until you try to sell, file an insurance claim, or explain yourself to a county inspector. The small money saved early can become a large bill later.
+          </p>
+
+          <h3>Insulation and Interior Finishing</h3>
+          <p>
+            Insulation is a system, not a single line item. Closed-cell spray foam costs $1.15–$2.90 per board foot installed. Blown-in insulation runs $0.90–$2.40 per sq ft. Fiberglass batts run $0.80–$2.60 per sq ft for standard unfaced batts and up to $4.00 per sq ft for premium vinyl-backed systems with metal liner panels. For a barndominium or climate-controlled workshop, spray foam is nearly non-negotiable because it air-seals, insulates, and acts as a vapor barrier simultaneously. Batts are adequate for unheated storage.
+          </p>
+          <p>
+            Beyond insulation, interior finishing adds quickly. Drywall hangs at $2–$4 per sq ft installed. Electrical rough-in runs $2,800–$10,000+ for a basic 200A panel with lighting and outlets, $5,000–$15,000 for a fully wired workshop with 220V circuits, and up to $30,000 for a complete barndominium with underground service trenching. Plumbing rough-in typically runs $4–$6 per sq ft for new construction. Adding a basic bathroom usually costs $4,000–$12,000 including fixtures. Vapor barrier placement always belongs on the warm side of the wall assembly — getting that wrong traps condensation inside the cavity and rots framing from the inside out.
+          </p>
+
+          <h3>Doors, Windows, and Openings</h3>
+          <p>
+            Overhead doors can quietly blow up a budget. Standard commercial sectional doors run $1,200–$4,000 per unit installed for common sizes — 9x8, 10x10, 12x12. Insulated doors add 30–50%. Oversized doors (14x14, 16x14) run $4,500–$8,500 installed. On a 40x60 shop with three insulated overhead doors, you can easily spend $5,000–$12,000+ on doors alone. For heated buildings, specify at least R-12 insulated doors; anything less leaves a giant heat leak.
+          </p>
+          <p>
+            Walk-in entry doors typically run $400–$1,500 installed for steel exterior doors, with fiberglass and insulated options at the high end. Windows run $300–$900 per unit installed for standard vinyl double-hung windows; larger or specialty windows cost more. A common mistake is pricing the shell and forgetting the openings. A big door is not just a door — it changes framing, hardware, tracks, operators, and often installation labor. On real jobs, overhead doors are usually the second-largest variable cost after the foundation. If a quote looks surprisingly low, check whether the door package is actually included and at what insulation level.
+          </p>
+
+          <h2>Pole Barn Cost Per Square Foot</h2>
+          <p>
+            The national 2026 average is <strong>$15–$40 per sq ft for a basic shell build</strong> and <strong>$65–$200 per sq ft for a fully finished build</strong>. A well-specified standard-size shell in an average market typically lands at $18–$25 per sq ft; a mid-range finished build lands at $85–$150 per sq ft. These ranges assume a standard post-frame structure on a prepared site with no unusual engineering or site constraints.
+          </p>
+          <p>
+            Smaller buildings cost more per square foot than larger ones. Fixed costs — permit fees, mobilization, engineering, crew setup — get amortized across less area on a small footprint. A 24x30 shell often runs $18–$25 per sq ft, while a 40x60 shell runs $15–$20 per sq ft and a 50x100 shell can run $14–$18 per sq ft. If a per-sq-ft quote looks unusually low for a small footprint, confirm what is and is not included.
+          </p>
+          <p>
+            Regional variance is significant. California, Massachusetts, New Jersey, and Washington sit at the top of the range. Oklahoma, Arkansas, Mississippi, and Indiana sit near the bottom. See the state table above for per-sq-ft ranges across all 50 states. Finish level drives the biggest gap: the same 40x60 shell at $20 per sq ft can become $140 per sq ft finished once insulation, electrical, plumbing, concrete, and interior finishing are added. Treat shell-only per-sq-ft quotes and finished per-sq-ft quotes as two different numbers.
+          </p>
+
+          <h2>How to Reduce Pole Barn Cost</h2>
+          <p>
+            Several concrete strategies can shave 10–25% off a pole barn budget without compromising structural integrity.
+          </p>
+          <ul>
+            <li><strong>Choose a standard size over a custom footprint.</strong> Standard sizes (24x30, 30x40, 40x60) let builders source pre-engineered truss packages and standard panel cuts. Custom sizes often add 5–10% in engineering and waste.</li>
+            <li><strong>Handle site prep yourself.</strong> Grading, gravel delivery, and pad compaction are DIY-friendly with a rented skid steer and can save $2,000–$6,000 on a mid-size build.</li>
+            <li><strong>Skip insulation for storage-only use.</strong> If the building will never be heated, skip insulation and climate control. An uninsulated ag shed can cost 30–40% less than the same footprint with a full insulation and vapor barrier system.</li>
+            <li><strong>Build in the off-season.</strong> Late fall and winter bids are often 5–10% lower than peak-season (spring/summer) bids. Crews have more availability and material suppliers discount to move inventory.</li>
+            <li><strong>Minimize door and window count.</strong> Each overhead door adds $1,200–$8,500. Each window adds $300–$900. Keeping openings to essentials can save $5,000–$15,000 on a working shop.</li>
+            <li><strong>Use 26-gauge steel, but skip standing-seam.</strong> Standing-seam roofing costs roughly 2x exposed-fastener panels. For most pole barns, 26-gauge exposed-fastener steel delivers 20–30 year performance at meaningfully lower cost.</li>
+            <li><strong>Pour a 4-inch slab instead of a 6-inch.</strong> If the building is a garage or light workshop, a 4-inch residential slab is adequate and costs 30–40% less than a 6-inch reinforced shop slab.</li>
+            <li><strong>Get three bids, not one.</strong> The spread between the lowest and highest bid on the same spec is commonly 20–30%. A second and third bid almost always pays for itself.</li>
+            <li><strong>Consider a pre-engineered kit.</strong> Kits can save 10–15% on materials, though you still need labor, foundation, and permits. Kits work best for experienced DIYers willing to coordinate trades.</li>
+          </ul>
+
+          <h2>Frequently Asked Questions</h2>
+          {faqItems.map((item, i) => (
+            <div key={i} style={{ marginBottom: '1.5rem' }}>
+              <h3 style={{ fontSize: '1.15rem', marginBottom: '0.5rem' }}>{item.q}</h3>
+              <p style={{ margin: 0 }}>{item.a}</p>
+            </div>
+          ))}
+
+          <h2>Find a Pole Barn Builder Near You</h2>
+          <p>
+            Regional pricing variance is significant enough that a quote from a local, experienced post-frame builder will always beat a generic online estimate. The right builder will spec the correct snow-load, wind-zone, and seismic requirements for your county, source materials from a regional supplier hub, and handle permits without surprises. For state-specific quotes and verified local builders across Wisconsin, Michigan, South Carolina, Florida, Minnesota, Ohio, Indiana, Pennsylvania, and every other state, <a href="https://polebarnfinder.com" target="_blank" rel="noopener">PoleBarnFinder.com</a> compares multiple builders in your area and delivers free estimates. You can also <Link href="/">browse all pole barn builders</Link> and related resources from our directory homepage.
+          </p>
+
+          <div style={{ marginTop: '3rem', marginBottom: '3rem', padding: '3rem', background: 'var(--bg-section-alt)', borderRadius: 'var(--border-radius-lg)', border: '1px solid var(--border-warm)' }}>
             <h3 style={{ marginTop: 0 }}>Metal Building Kit Pricing</h3>
             <p style={{ marginBottom: '1.5rem' }}>Pre-engineered metal building kits can cost significantly less than custom stick-built pole barns. Whitestar Metal Buildings ships kits nationwide with 4–6 week lead times, including engineering. <strong>Plus, receive a $500 credit toward your building purchase!</strong></p>
             <div>
@@ -318,33 +490,7 @@ export default function CostGuidePage() {
             </div>
           </div>
 
-          <h2 id="kit-vs-custom">Kit vs. Custom Build</h2>
-          <p>
-            A kit can look attractive on paper because the upfront number is clean and simple. Pole barn kits usually cost $10–$30 per square foot for materials only, and a standard 30×40 kit typically runs $12,000–$36,000 depending on quality and upgrades. Most kits ship with pre-engineered components, cut lists, hardware, and assembly instructions, which helps tighten up the ordering process. Delivery is also typically 2–4 weeks faster than a custom build timeline, so if you are racing weather or trying to get a shell up quickly, that shorter runway has real value.
-          </p>
-          <p>
-            The catch is that the kit price only covers materials. You still need a crew to handle framing and installation, and professional labor usually runs $5–$15 per square foot. Then you add the foundation at $4,000–$15,000+, permits at $150–$2,500, and the job of coordinating every trade yourself. By the time labor, foundation, permits, electrical, and plumbing are added, a kit build is usually only 10–15% less than a turnkey custom build. You save some money, but you also take on the scheduling, mistakes, and liability yourself.
-          </p>
-          <p>
-            A custom build costs more upfront because one builder is carrying the whole job. That includes materials, labor, foundation, permits, inspections, and warranty. If something goes wrong, you have one phone number to call instead of a chain of finger-pointing between suppliers and subs. The warranty also covers both materials and workmanship. With quality builders using pre-engineered structures, you still see roughly a 30% reduction in overall construction costs compared to traditional stick-built homes, which keeps turnkey pole barns and barndominiums competitive even with full-service pricing.
-          </p>
-          <p>
-            For most first-time pole barn buyers, a turnkey custom build eliminates the risk of coordination headaches and surprise costs. For experienced builders or hands-on DIYers, a kit can save 10–15% on total project cost — but only if you accurately budget for every line item beyond the kit itself.
-          </p>
-
-          <h2>Permits & Engineering</h2>
-          <p>
-            Permits protect the building you are paying for. An unpermitted structure cannot be insured, so if a storm tears it up, you absorb the entire loss yourself. It also hurts resale value because a buyer&apos;s lender will flag it during due diligence, and some counties can issue a demolition order if the structure does not meet code. Against that risk, the permit fee is small money. Most building permits run $150–$2,500, which is roughly 0.50–2.00% of total construction cost. On a structure that may serve your property for decades, that fee is just basic asset protection.
-          </p>
-          <p>
-            Engineering is the part that proves the building works on your site under your local code. In areas with strict wind, snow, or seismic requirements, structural engineering adds $1,200–$4,800 to the project. That typically covers engineered truss plans, stamped foundation designs, and the compliance calculations the county wants to see before issuing approval. If the shell has to meet residential code, upgrades like emergency egress, attic ventilation, and foundation anchoring can add 10–15% to shell cost in high-wind coastal regions. Good builders include engineering in the bid. If the quote does not mention it, ask. If a builder tells you that you do not need engineering, find a different builder.
-          </p>
-          <p>
-            <br/><br/>
-            Builders: Make sure your crew is compliant. <a href="https://360training.com" target="_blank" rel="noopener sponsored">Get your OSHA-10 certification here →</a>
-          </p>
-
-          <div style={{ marginTop: '4rem', padding: '3rem', background: 'var(--color-stone)', borderRadius: 'var(--border-radius-lg)', border: '1px solid var(--color-border)' }}>
+          <div style={{ marginTop: '4rem', padding: '3rem', background: 'var(--bg-section-alt)', borderRadius: 'var(--border-radius-lg)', border: '1px solid var(--border-warm)' }}>
             <h3 style={{ marginTop: 0 }}>Ready to get a firm price?</h3>
             <p className="mb-2">Talk to local builders who know regional pricing and requirements.</p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -361,7 +507,7 @@ export default function CostGuidePage() {
               <div className="card-icon" style={{width: '60px', height: '60px', fontSize: '1.5rem'}}>🏦</div>
               <h3 className="card-title">Need Financing?</h3>
               <p className="card-text">Construction loans with rates from 7-9%. Pre-qualify in 5 minutes without affecting your credit score.</p>
-              <a 
+              <a
                 href="https://www.lightstream.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -383,7 +529,7 @@ export default function CostGuidePage() {
             <div className="card-icon" style={{width: '60px', height: '60px', fontSize: '1.5rem'}}>🏦</div>
             <h3 className="card-title">Need Financing?</h3>
             <p className="card-text">Construction loans with rates from 7-9%. Pre-qualify in 5 minutes without affecting your credit score.</p>
-            <a 
+            <a
               href="https://www.lightstream.com/"
               target="_blank"
               rel="noopener noreferrer"
