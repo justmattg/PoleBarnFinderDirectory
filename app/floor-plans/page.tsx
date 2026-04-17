@@ -74,6 +74,19 @@ export default function FloorPlansPage() {
 
       <section className="section">
         <div className="container">
+          <div style={{ marginBottom: '3rem', padding: '2.5rem 2rem', background: 'var(--bg-section-alt)', borderRadius: 'var(--border-radius-lg)', border: '1px solid var(--border-warm)', display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ flex: '1 1 320px' }}>
+              <h2 style={{ marginTop: 0, marginBottom: '0.5rem', fontSize: '1.5rem' }}>Planning your build? Start with costs</h2>
+              <p style={{ margin: 0 }}>
+                See 2026 pricing by size and state before you lock in a floor plan — it&apos;s the fastest way to right-size your design to your budget.
+              </p>
+            </div>
+            <div>
+              <Link href="/cost-guide" className="btn-primary">
+                View the Cost Guide →
+              </Link>
+            </div>
+          </div>
           <div className="card-grid mb-3">
             <a href="https://mybarndominiumplans.com" target="_blank" rel="noopener sponsored" className="path-card animate-fade-up delay-1">
               <div className="card-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
