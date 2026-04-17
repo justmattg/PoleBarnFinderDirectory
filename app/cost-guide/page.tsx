@@ -117,15 +117,14 @@ export default function CostGuidePage() {
     ]
   };
 
-  // Full 50-state cost estimates for 2026. Ranges are derived from national
-  // baseline ($15–$40 basic, $65–$200 finished per sq ft) adjusted for regional
-  // labor markets, snow/wind/seismic code requirements, and builder density.
-  // All figures are estimates. AK and HI are marked {VERIFY_STATE_DATA} because
-  // freight and remote logistics make per-sq-ft ranges unreliable without
-  // site-specific quoting.
+  // Contiguous-US (48-state) cost estimates for 2026. Ranges are derived from
+  // a national baseline ($15–$40 basic, $65–$200 finished per sq ft) adjusted
+  // for regional labor markets, snow/wind/seismic code requirements, and
+  // builder density. All figures are estimates. Alaska and Hawaii are
+  // intentionally excluded because freight and remote-site logistics make
+  // per-sq-ft ranges unreliable without site-specific quoting.
   const stateRows: { state: string; basic: string; finished: string; notes: string }[] = [
     { state: 'Alabama',       basic: '$14–$36',  finished: '$60–$170',  notes: 'Low labor rates; minimal snow/seismic requirements.' },
-    { state: 'Alaska',        basic: '{VERIFY_STATE_DATA}', finished: '{VERIFY_STATE_DATA}', notes: 'Freight and remote-site logistics dominate pricing; quote locally.' },
     { state: 'Arizona',       basic: '$16–$40',  finished: '$70–$190',  notes: 'Metro premiums in Phoenix/Tucson; low snow, moderate wind.' },
     { state: 'Arkansas',      basic: '$13–$34',  finished: '$58–$165',  notes: 'Among the lowest-cost states; light code requirements.' },
     { state: 'California',    basic: '$25–$50',  finished: '$95–$250',  notes: 'Seismic engineering, high labor ($65–$85/hr), complex permitting.' },
@@ -134,7 +133,6 @@ export default function CostGuidePage() {
     { state: 'Delaware',      basic: '$18–$40',  finished: '$75–$195',  notes: 'Moderate coastal wind loads; small builder pool.' },
     { state: 'Florida',       basic: '$20–$45',  finished: '$80–$210',  notes: 'Hurricane engineering adds $3,000–$8,000; Miami-Dade is top-tier.' },
     { state: 'Georgia',       basic: '$14–$36',  finished: '$60–$170',  notes: 'Low labor rates; minimal snow/seismic requirements.' },
-    { state: 'Hawaii',        basic: '{VERIFY_STATE_DATA}', finished: '{VERIFY_STATE_DATA}', notes: 'Freight and import logistics dominate pricing; quote locally.' },
     { state: 'Idaho',         basic: '$16–$40',  finished: '$70–$190',  notes: 'Snow loads add to truss pricing; moderate labor.' },
     { state: 'Illinois',      basic: '$16–$40',  finished: '$70–$190',  notes: 'Chicago metro premium; downstate pricing closer to baseline.' },
     { state: 'Indiana',       basic: '$14–$36',  finished: '$60–$170',  notes: 'One of the cheapest post-frame markets; strong builder density.' },
@@ -197,7 +195,7 @@ export default function CostGuidePage() {
           <article className="content-wrapper">
 
           <p>
-            A pole barn costs an average of <strong>$15 to $40 per square foot for a basic shell build</strong> and <strong>$65 to $200 per square foot for a fully finished build</strong> in 2026. A common 30x40 comes in around $18,000–$40,000 shell-only and $50,000–$135,000 finished, while a mid-size 40x60 lands near $36,000–$85,000 shell-only and $100,000–$260,000 finished. These ranges reflect current material and labor pricing and assume a standard post-frame structure on a prepared site. Your final number is driven by three things: the size of the building, the state (and sometimes the county) you are building in, and how far past a weather-tight shell you take the finish. This guide covers size-specific costs for nine common footprints, state-by-state pricing across all 50 states, and a detailed breakdown of every line item that moves the bottom line.
+            A pole barn costs an average of <strong>$15 to $40 per square foot for a basic shell build</strong> and <strong>$65 to $200 per square foot for a fully finished build</strong> in 2026. A common 30x40 comes in around $18,000–$40,000 shell-only and $50,000–$135,000 finished, while a mid-size 40x60 lands near $36,000–$85,000 shell-only and $100,000–$260,000 finished. These ranges reflect current material and labor pricing and assume a standard post-frame structure on a prepared site. Your final number is driven by three things: the size of the building, the state (and sometimes the county) you are building in, and how far past a weather-tight shell you take the finish. This guide covers size-specific costs for nine common footprints, state-by-state pricing across the contiguous United States, and a detailed breakdown of every line item that moves the bottom line.
           </p>
 
           <h2>Average Pole Barn Cost in 2026</h2>
@@ -293,7 +291,7 @@ export default function CostGuidePage() {
 
           <h2>Pole Barn Cost by State in 2026</h2>
           <p>
-            State-level pricing varies by 30–40% across the country in 2026. Four forces drive regional cost variance: <strong>labor rates</strong>, <strong>material shipping costs</strong>, <strong>climate-driven engineering</strong> (snow, wind, and seismic loads), and <strong>permit complexity</strong>. A Minnesota pole barn carries heavier snow-load engineering than the same building in Texas. A Florida pole barn requires hurricane-rated connections that a Michigan build does not. California adds seismic engineering and some of the highest labor rates in the country. The table below covers per-sq-ft estimates for all 50 states. Alaska and Hawaii are marked <code>{'{VERIFY_STATE_DATA}'}</code> because freight and remote-site logistics dominate pricing and ranges are unreliable without site-specific quoting.
+            State-level pricing varies by 30–40% across the country in 2026. Four forces drive regional cost variance: <strong>labor rates</strong>, <strong>material shipping costs</strong>, <strong>climate-driven engineering</strong> (snow, wind, and seismic loads), and <strong>permit complexity</strong>. A Minnesota pole barn carries heavier snow-load engineering than the same building in Texas. A Florida pole barn requires hurricane-rated connections that a Michigan build does not. California adds seismic engineering and some of the highest labor rates in the country. The table below covers per-sq-ft estimates across the contiguous United States (all 48 states where standard post-frame construction is the norm). Alaska and Hawaii are excluded because freight and remote-site logistics dominate pricing there and ranges are unreliable without site-specific quoting.
           </p>
 
           <div style={{ overflowX: 'auto' }}>
@@ -448,7 +446,7 @@ export default function CostGuidePage() {
             Smaller buildings cost more per square foot than larger ones. Fixed costs — permit fees, mobilization, engineering, crew setup — get amortized across less area on a small footprint. A 24x30 shell often runs $18–$25 per sq ft, while a 40x60 shell runs $15–$20 per sq ft and a 50x100 shell can run $14–$18 per sq ft. If a per-sq-ft quote looks unusually low for a small footprint, confirm what is and is not included.
           </p>
           <p>
-            Regional variance is significant. California, Massachusetts, New Jersey, and Washington sit at the top of the range. Oklahoma, Arkansas, Mississippi, and Indiana sit near the bottom. See the state table above for per-sq-ft ranges across all 50 states. Finish level drives the biggest gap: the same 40x60 shell at $20 per sq ft can become $140 per sq ft finished once insulation, electrical, plumbing, concrete, and interior finishing are added. Treat shell-only per-sq-ft quotes and finished per-sq-ft quotes as two different numbers.
+            Regional variance is significant. California, Massachusetts, New Jersey, and Washington sit at the top of the range. Oklahoma, Arkansas, Mississippi, and Indiana sit near the bottom. See the state table above for per-sq-ft ranges across the contiguous 48 states. Finish level drives the biggest gap: the same 40x60 shell at $20 per sq ft can become $140 per sq ft finished once insulation, electrical, plumbing, concrete, and interior finishing are added. Treat shell-only per-sq-ft quotes and finished per-sq-ft quotes as two different numbers.
           </p>
 
           <h2>How to Reduce Pole Barn Cost</h2>
